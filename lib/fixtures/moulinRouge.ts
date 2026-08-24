@@ -3,9 +3,7 @@ import { SOURCES } from "./sources";
 import { CARDS } from "./cards";
 
 /**
- * §6.3 A. 기관 이미지
  * Met Open Access (Public Domain / CC0) — Wikimedia Commons 경유 안정 URL.
- * dateVerified는 실제 검증일을 유지한다.
  */
 const IMAGE_URL =
   "https://commons.wikimedia.org/wiki/Special:FilePath/Henri_de_Toulouse-Lautrec%2C_Moulin_Rouge_-_La_Goulue%2C_1891_-_The_Metropolitan_Museum_of_Art.jpg";
@@ -24,7 +22,7 @@ export const moulinRougeArtwork: ArtworkPageData = {
   techniqueCard: CARDS.lithography,
   heroImage: {
     url: IMAGE_URL,
-    alt: "툴루즈 로트렉의 석판화 포스터 ‘물랭루주: 라 굴루’. 왼쪽에서 남자의 실루엣이, 오른쪽에서 스커트를 걷어 올린 춤꾼 라 굴루가 노란 빛 속에 크게 보인다.",
+    alt: "툴루즈 로트렉의 석판화 포스터 ‘물랭루주: 라 굴루’. 왼쪽에서 발레리나처럼 뻣뻣한 발렌탱의 검은 실루엣이, 오른쪽 중앙에서 흰 스커트를 부풀린 라 굴루가 노란 불빛 속에 크게 보인다. 배경의 검은 관객 실루엣과 대각선 repeating 글씨가 시선을 이끈다.",
     visualRecord: {
       originType: "institutional",
       institution: "The Metropolitan Museum of Art",
@@ -39,18 +37,21 @@ export const moulinRougeArtwork: ArtworkPageData = {
   },
   materials: [
     {
-      name: "석회암 판",
-      simpleDescription:
-        "색 하나당 한 개씩 준비한 매끈한 돌판. 색이 네 개면 판도 네 개다.",
+      name: "석회암 판 3장",
+      simpleDescription: "색마다 판 하나씩, 총 4색 — 크기 때문에 종이도 세 장을 이어 붙여야 했다.",
     },
     {
-      name: "기름성 잉크와 크레용",
-      simpleDescription: "물을 미워하는 성질을 이용해, 그린 자리에만 머문다.",
+      name: "기름성 잉크·크레용·터셰",
+      simpleDescription: "물을 밀어내고 기름을 붙잡는 성질로 선과 면을 만든다.",
+    },
+    {
+      name: "우븐지(wove paper)",
+      simpleDescription: "올이 드러나지 않는 매끈한 종이. 접합부가 감춰진다.",
     },
   ],
   scienceConcepts: [CARDS.hydrophilicOleophilic],
   howItWasMade: {
-    heading: "어떻게 만들어졌나",
+    heading: "어떻게 만들어졌나 — 네 가지 색, 세 장의 종이",
     body: [
       {
         _type: "block",
@@ -61,7 +62,7 @@ export const moulinRougeArtwork: ArtworkPageData = {
           {
             _type: "span",
             _key: "mk1s1",
-            text: "네 가지 색으로 찍은 석판화다. 색마다 판을 따로 준비해 같은 종이에 차례로 겹쳐 찍어야 했고, 판 크기가 워낙 커서 종이 세 장을 이어 붙였다. 인쇄는 파리의 Affiches Américaines(Charles Lévy) 인쇄소에서 이루어졌다. 색판이 조금만 어긋나도 얼굴과 스커트가 무너지므로, 정합(registration)은 곧 품질 그 자체였다.",
+            text: "네 가지 색으로 찍은 평판 석판화이며, 색마다 판을 따로 준비해 같은 종이에 차례로 겹쳐 찍어야 했다. 크기 자체가 압도적이어서—높이 6피트(약 190cm)—우븐지 세 장을 이어 붙였고, 인쇄는 파리의 Affiches Américaines(샤를 레비) 인쇄소가 맡았다. 색판이 조금만 어긋나도 얼굴과 스커트의 경계가 무너지므로, 정합(registration)은 곧 품질 그 자체였다.",
           },
         ],
       },
@@ -74,14 +75,27 @@ export const moulinRougeArtwork: ArtworkPageData = {
           {
             _type: "span",
             _key: "mk2s1",
-            text: "눈에 띄는 절약도 있다. 라 굴루의 하얀 스커트는 잉크를 칠하지 않은 종이의 여백이다. 대량으로 찍는 그림에서는 ‘찍지 않음’이 곧 비용 절감이자, 강한 형태를 만드는 디자인이 된다.",
+            text: "형태를 결정한 또 하나의 선택은 ‘찍지 않음’이다. 라 굴루의 하얗고 부풀린 스커트는 잉크를 칠하지 않은 종이의 여백 그 자체다. 대량으로 찍는 그림에서 여백은 비용 절감이자 가장 강한 형태—멀리서도 읽히는 실루엣—가 된다. 배경의 반복되는 레터링(MOULIN ROUGE)과 검은 관객 열은 대각선 리듬을 만들며 무대 중앙의 폭발을 더 또렷하게 만든다.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        _key: "mk3",
+        style: "normal",
+        markDefs: [],
+        children: [
+          {
+            _type: "span",
+            _key: "mk3s1",
+            text: "발렌탱(Valentin le Désossé)의 길쭉한 검은 실루엣은 라 굴루와 대조를 이루며 포스터를 좌우 두 덩어리로 나눈다. 실루엣과 평면 색면만으로 공간을 만든 방식은, 그가 일본 목판화에서 배운 압축과도 통한다.",
           },
         ],
       },
     ],
   },
   historicalContext: {
-    heading: "무도장과 도시의 밤",
+    heading: "무도장과 도시의 밤 — 왜 하필 1891년이었나",
     body: [
       {
         _type: "block",
@@ -92,7 +106,7 @@ export const moulinRougeArtwork: ArtworkPageData = {
           {
             _type: "span",
             _key: "hc1s1",
-            text: "물랭루주는 1889년 몽마르트르의 불바르 드 클리시에 문을 연 값비싼 무도장이었다. ‘라 굴루(제식이)’라는 별명의 댄서 루이즈 베버와 곡예사 발렝탱 르 데소세는 이곳의 스타였다. 포스터는 단순한 광고가 아니라, 도시 오락 산업이 자신들의 상품을 파는 새로운 광고 시장이 만들어졌다는 신호였다.",
+            text: "물랭루주는 1889년 몽마르트르의 불바르 드 클리시에 문을 연 값비싼 무도장이었다. ‘라 굴루(먹보)’ 루이즈 베버와 ‘뼈 없는’ 발렌탱은 이곳을 상징하는 스타였다. 도시는 가스등과 대중 교통으로 밤까지 붐볐고, 카바레·상점·신문이 벽을 사들이며 포스터 시장 자체가 커지고 있었다. 이 수요 없는 기술 혁명은 없었다.",
           },
         ],
       },
@@ -105,14 +119,14 @@ export const moulinRougeArtwork: ArtworkPageData = {
           {
             _type: "span",
             _key: "hc2s1",
-            text: "포스터는 벽에 풀로 붙여졌다. 비에 젖고, 찢기고, 다른 포스터에 덮였다. 원본이 아니라 복제물이 공간을 채우는 것이 자연스러운 최초의 예술 환경이 열린 셈이다.",
+            text: "포스터는 풀로 벽에 붙여졌다. 비에 젖고, 찢기고, 다른 광고에 덮였다. 화랑의 두꺼운 액자나 유리 없이, 복제물이 곧 원본이 되는 첫 예술 환경이 거리에서 열렸다. 로트렉에게 포스터 의뢰는 화가가 아니라 거리로 가는 길이었고, 그 길은 도시의 노동과 소비, 야간 오락 산업이 함께 만든 것이었다.",
           },
         ],
       },
     ],
   },
   whyItMatters: {
-    heading: "왜 중요한가",
+    heading: "왜 중요한가 — 광고가 미술이 된 순간",
     body: [
       {
         _type: "block",
@@ -123,7 +137,20 @@ export const moulinRougeArtwork: ArtworkPageData = {
           {
             _type: "span",
             _key: "wm1s1",
-            text: "이 포스터는 광고 그림이 미술관에 걸릴 수 있음을 보여준 사례가 되었다. 화가의 서명보다 형태와 색의 즉각적 인상이 중요하다는 발상은, 눈이 흐르는 거리라는 조건에서 나왔다. 대량복제 기술이 ‘원본의 위계’를 흔든 지점 또한 여기서다.",
+            text: "이 포스터는 광고 그림이 미술관에 걸릴 수 있음을 보여준 사례가 됐다. 화가의 서명보다 형태와 색의 즉각적 인상이 중요하다는 발상은, 눈이 흐르는 거리라는 조건에서 나왔다. 평면 색면과 실루엣, 그리고 ‘비워둠’의 디자인—여백을 형태로 쓴 방식—은 이후 포스터 디자인의 문법이 됐다.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        _key: "wm2",
+        style: "normal",
+        markDefs: [],
+        children: [
+          {
+            _type: "span",
+            _key: "wm2s1",
+            text: "동시에 대량복제가 ‘원본의 위계’를 흔든 지점이기도 하다. 벽에 붙은 수천 장 중 어느 하나가 원본인지 묻는 일 자체가 어색해진다. 기술사적으로도 의미가 있다—평판 석판화가 거리 광고라는 대량 소비재와 만나, 복제의 문명이 일상으로 들어온 장면이기 때문이다.",
           },
         ],
       },
@@ -153,8 +180,7 @@ export const moulinRougeArtwork: ArtworkPageData = {
         _type: "bridge",
         title: "새기는 것에서 패터닝으로",
         slug: "from-printing-to-patterning",
-        shortDescription:
-          "1839년의 돌판과 오늘날 반도체 공장은 무엇이 같고 무엇이 다를까?",
+        shortDescription: "1839년의 돌판과 오늘날 반도체 공장은 무엇이 같고 무엇이 다를까?",
         domain: "technology",
         thumbnail: null,
       },
