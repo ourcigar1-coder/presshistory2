@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { ExploreShell } from "@/components/layout/ExploreShell";
+import { SideTrackOverlay } from "@/components/sidetrack/SideTrackOverlay";
 import { NodeViewTracker } from "@/components/analytics/NodeViewTracker";
 import { ArtworkPageView } from "@/components/nodes/ArtworkPageView";
 import { fetchArtworkPage } from "@/lib/sanity/fetchPage";
@@ -27,9 +29,14 @@ export default async function ArtworkPageRoute({ params }: PageProps<"/artworks/
   if (!data) notFound();
 
   return (
-    <ExploreShell currentSlug={slug}>
-      <ArtworkPageView data={data} />
-      <NodeViewTracker nodeId={data._id} nodeType={data._type} domain={data.domain} slug={slug} />
-    </ExploreShell>
+    <>
+      <ExploreShell currentSlug={slug}>
+        <ArtworkPageView data={data} />
+        <NodeViewTracker nodeId={data._id} nodeType={data._type} domain={data.domain} slug={slug} />
+      </ExploreShell>
+      <Suspense fallback={null}>
+        <SideTrackOverlay sideTracks={data.unexpectedConnections ?? []} nodeId={data._id} />
+      </Suspense>
+    </>
   );
 }
