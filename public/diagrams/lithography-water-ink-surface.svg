@@ -1,0 +1,71 @@
+<!--
+  AI-generated explanatory visual (§2.7)
+  generationProvider: ox-alpha (opencode) / model: x-preview-f-free
+  promptVersion: v1
+  purpose: 석판화 표면의 친수/친유 선택적 부착 단면 설명
+  referenceSources: Met hd/lith essay, Britannica "Lithography" (lib/fixtures/sources.ts)
+  humanReviewed: false (편집자 검수 전) — accuracyStatus: draft
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57534e"/>
+    </marker>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="720" height="400" fill="#faf7f2"/>
+
+  <text x="360" y="34" text-anchor="middle" font-size="19" fill="#1c1a17" font-weight="700">젖은 빈 면은 잉크를 밀어내고, 그린 자리만 받는다</text>
+
+  <!-- 잉크 롤러 -->
+  <g>
+    <circle cx="240" cy="120" r="46" fill="#3f3c39"/>
+    <circle cx="240" cy="120" r="46" fill="none" stroke="#1c1a17" stroke-width="3"/>
+    <path d="M210 100 A42 42 0 0 1 268 98" stroke="#6b6864" stroke-width="4" fill="none"/>
+    <rect x="236" y="30" width="8" height="44" rx="4" fill="#57534e"/>
+    <text x="240" y="196" text-anchor="middle" font-size="14" fill="#57534e">기름 잉크 롤러</text>
+  </g>
+
+  <!-- 돌 판 -->
+  <rect x="60" y="230" width="600" height="70" rx="8" fill="#b8b2a7" stroke="#8d867b" stroke-width="2"/>
+  <text x="360" y="330" text-anchor="middle" font-size="13" fill="#57534e">석회암 판</text>
+
+  <!-- 왼쪽: 그린 자리 (친유) -->
+  <g>
+    <path d="M110 232 q18 -16 36 0 q18 -14 36 0 q18 -12 34 2 l0 -10 q-52 -22 -106 -2 z" fill="#2e2b28"/>
+    <rect x="110" y="222" width="106" height="10" fill="#2e2b28"/>
+    <!-- 잉크가 붙음 -->
+    <path d="M118 214 q45 -26 90 0 l0 8 q-45 -20 -90 0 z" fill="#1c1a17"/>
+    <line x1="163" y1="168" x2="163" y2="206" stroke="#57534e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="163" y="152" text-anchor="middle" font-size="14" fill="#1c1a17" font-weight="700">그린 선 · 기름을 붙잡음</text>
+  </g>
+
+  <!-- 오른쪽: 빈 자리 (친수) -->
+  <g>
+    <rect x="420" y="216" width="180" height="14" rx="7" fill="#93c5fd" opacity="0.9"/>
+    <!-- 물방울 -->
+    <circle cx="450" cy="192" r="9" fill="#60a5fa"/>
+    <circle cx="492" cy="188" r="11" fill="#60a5fa"/>
+    <circle cx="540" cy="193" r="8" fill="#60a5fa"/>
+    <circle cx="576" cy="189" r="10" fill="#60a5fa"/>
+    <line x1="510" y1="152" x2="510" y2="208" stroke="#57534e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="510" y="136" text-anchor="middle" font-size="14" fill="#1d4ed8" font-weight="700">빈 면은 물막으로 덮임</text>
+  </g>
+
+  <!-- 중간 화살표: 잉크 거부 -->
+  <g>
+    <line x1="300" y1="120" x2="380" y2="120" stroke="#57534e" stroke-width="2.5" marker-end="url(#arr)" transform="rotate(24 340 120)"/>
+    <text x="352" y="88" text-anchor="middle" font-size="13" fill="#57534e">젖은 면 위에서는 미끄러져 지나감</text>
+  </g>
+
+  <!-- 범례 -->
+  <g font-size="12" fill="#57534e">
+    <rect x="60" y="362" width="14" height="14" fill="#1c1a17"/>
+    <text x="80" y="373">기름(잉크)</text>
+    <rect x="160" y="362" width="14" height="14" fill="#60a5fa"/>
+    <text x="180" y="373">물</text>
+    <rect x="220" y="362" width="14" height="14" fill="#b8b2a7"/>
+    <text x="240" y="373">돌 표면</text>
+  </g>
+</svg>

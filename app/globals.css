@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/*
+ * 《복제의 문명》 디자인 토큰
+ * - Main Content는 몰입, Side-track은 호기심, Navigation은 길 잃지 않게 (§4 UI 원칙)
+ */
+:root {
+  --paper: #faf7f2;
+  --ink: #1c1a17;
+  --ink-soft: #57534e;
+  --stone: #e8e2d8;
+  --accent: #b45309; /* 잉크 오렌지 */
+  --water: #1d4ed8; /* 석판화의 물 */
+  --conceptual: #6d28d9; /* conceptual relation 구분색 */
+  --historical: #92400e; /* historical relation 구분색 */
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-stone-line: var(--stone);
+  --color-accent: var(--accent);
+  --color-water: var(--water);
+  --color-historical: var(--historical);
+  --color-conceptual: var(--conceptual);
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* reduced-motion 환경에서도 핵심 정보가 동일하게 이해 가능해야 한다 (§4.6) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
