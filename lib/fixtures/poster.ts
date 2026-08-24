@@ -13,7 +13,7 @@ export const posterEntry: EntryPageData = {
     "밤거리가 밝아지고 사람이 흐르기 시작한 도시. 흐르는 눈을 붙잡아야 하는 상업이 벽을 원했다.",
   domain: "society",
   heroImage: {
-    url: "https://upload.wikimedia.org/wikipedia/commons/4/40/%22L%27Esclave_blanche%22_par_Gustave_Aimard%2C_au_%22Journal_du_Dimanche%22..._-_affiche_-_Jules_Ch%C3%A9ret_-_btv1b9015469h.jpg",
+    url: "/images/cheret-esclave.jpg",
     alt: "쥘 셰레의 석판화 포스터 ‘L'Esclave blanche’ — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례. (BnF Gallica, btv1b9015469h)",
   },
   connections: [

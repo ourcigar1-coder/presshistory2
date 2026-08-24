@@ -5,8 +5,7 @@ import { CARDS } from "./cards";
 /**
  * Met Open Access (Public Domain / CC0) — Wikimedia Commons 경유 안정 URL.
  */
-const IMAGE_URL =
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Henri_de_Toulouse-Lautrec%2C_Moulin_Rouge_-_La_Goulue%2C_1891_-_The_Metropolitan_Museum_of_Art.jpg";
+const IMAGE_URL = "/images/moulin-rouge-la-goulue.jpg";
 
 export const moulinRougeArtwork: ArtworkPageData = {
   _id: "artwork-moulin-rouge-la-goulue",

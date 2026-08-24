@@ -120,8 +120,7 @@ const imageRecords: Doc[] = [
     originType: "institutional",
     institution: "Bibliothèque nationale de France (Gallica)",
     sourcePage: "https://gallica.bnf.fr/ark:/12148/btv1b9015469h",
-    sourceImage:
-      "https://upload.wikimedia.org/wikipedia/commons/4/40/%22L%27Esclave_blanche%22_par_Gustave_Aimard%2C_au_%22Journal_du_Dimanche%22..._-_affiche_-_Jules_Ch%C3%A9ret_-_btv1b9015469h.jpg",
+    sourceImage: "/images/cheret-esclave.jpg",
     license: "Public Domain (BnF Gallica, Wikimedia Commons)",
     publicDomain: true,
     creditLine: "Jules Chéret, L'Esclave blanche — BnF Gallica, btv1b9015469h",

@@ -19,7 +19,7 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
             ? data.heroImage
             : data._id === "entry-poster"
               ? {
-                  url: "https://upload.wikimedia.org/wikipedia/commons/4/40/%22L%27Esclave_blanche%22_par_Gustave_Aimard%2C_au_%22Journal_du_Dimanche%22..._-_affiche_-_Jules_Ch%C3%A9ret_-_btv1b9015469h.jpg",
+                  url: "/images/cheret-esclave.jpg",
                   alt: "쥘 셰레의 석판화 포스터 ‘L'Esclave blanche’(Bnf Gallica 소장) — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례.",
                 }
               : null;
