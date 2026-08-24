@@ -115,6 +115,18 @@ const placeDocs: Doc[] = [
 // ---------------------------------------------------------------- image records
 const imageRecords: Doc[] = [
   {
+    _id: "image-cheret-saxoleine",
+    _type: "imageAssetRecord",
+    originType: "institutional",
+    institution: "The Art Institute of Chicago",
+    sourcePage: "https://www.artic.edu/artworks/218855/saxoleine",
+    license: "CC0 Public Domain",
+    publicDomain: true,
+    creditLine: "Jules Chéret, Saxoléine, 1893. The Art Institute of Chicago. CC0.",
+    accessionNumber: "2013.1144",
+    dateVerified: ACCESSED,
+  },
+  {
     _id: "image-met-la-goulue",
     _type: "imageAssetRecord",
     originType: "institutional",
@@ -297,6 +309,11 @@ const entryDoc: Doc = {
   shortDescription: posterEntry.shortDescription,
   domain: posterEntry.domain,
   status: "published",
+  heroImage: {
+    _type: "image",
+    alt: "쥘 셰레의 석판화 포스터 ‘Saxoléine’(1893). 거리 벽을 장식하던 대형 색채 포스터의 대표 사례.",
+    visualRecord: ref("image-cheret-saxoleine"),
+  },
   connections: [ref("rel-poster-lithography"), ref("rel-poster-moulin")],
   recommendedPath: [
     { reason: "포스터를 수천 장 찍게 만든 기술의 원리가 궁금해진다면", target: ref("technique-lithography") },

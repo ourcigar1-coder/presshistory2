@@ -13,8 +13,8 @@ export const posterEntry: EntryPageData = {
     "밤거리가 밝아지고 사람이 흐르기 시작한 도시. 흐르는 눈을 붙잡아야 하는 상업이 벽을 원했다.",
   domain: "society",
   heroImage: {
-    url: null,
-    alt: "19세기 후반 파리 거리에 붙은 대형 포스터를 묘사한 설명 이미지(준비 중)",
+    url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jules_Ch%C3%A9ret_-_Saxol%C3%A9ine_-_Google_Art_Project.jpg",
+    alt: "쥘 셰레의 석판화 포스터 ‘Saxoléine’(1893). 벽에 붙은 대형 포스터가 거리를 장식하던 시절을 보여주는 대표 사례.",
   },
   connections: [
     {
@@ -22,7 +22,8 @@ export const posterEntry: EntryPageData = {
       relationNature: "historical",
       evidenceLevel: "documented",
       label: "포스터 물량을 가능하게 만든 인쇄법",
-      teaser: "수천 장을 찍으려면 돌을 파는 방식으로는 감당이 안 됐다 — 그래서 돌을 파지 않는 인쇄법이 주목받았다.",
+      teaser:
+        "수천 장을 찍으려면 돌을 파는 방식으로는 감당이 안 됐다 — 그래서 돌을 파지 않는 인쇄법이 주목받았다.",
       editorialPriority: 1,
       sources: [SOURCES.metLithographyEssay, SOURCES.britannicaLithography],
       target: CARDS.lithography,
