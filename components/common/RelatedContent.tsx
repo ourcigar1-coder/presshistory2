@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SideTrackLink } from "@/components/sidetrack/SideTrackOverlay";
 import { TrackedRelationLink } from "@/components/analytics/TrackedRelationLink";
 
-/** 노드 카드 URL. story/term/science는 고유 URL(§4.4 Full Knowledge Node) */
+/** 노드 카드 URL */
 export function nodeHref(card: Pick<NodeCard, "_type" | "slug">): string {
   const route = PAGE_TYPE_ROUTES[card._type as PageTypeName];
   if (!route || !card.slug) return "/";
@@ -28,8 +28,8 @@ function RelationBadge({ nature }: { nature: "historical" | "conceptual" }) {
 }
 
 /**
- * §4.3 RelatedContent — 연결 이유(teaser)를 보여주는 카드.
- * historical/conceptual 관계를 시각적으로 구분한다 (§0.2).
+ * 옆길 — 통일된 용어. 모든 연결은 '옆길'로만 표현한다.
+ * 큰 카드는 쓰지 않고 칩 내부에서만 옆길 링크를 노출한다.
  */
 export function RelatedContent({
   relation,
@@ -38,12 +38,10 @@ export function RelatedContent({
 }: {
   relation: RelationTargetProjection;
   onOpenSideTrack?: boolean;
-  /** 이 카드가 표시된 페이지의 노드 id — related_content_click 발행용 */
   sourceNodeId?: string;
 }) {
   const target = relation.target;
   const href = nodeHref(target);
-  const sideTrackParam = target.slug ? `?sideTrack=${target.slug}` : "";
 
   return (
     <article className="group rounded-xl border border-stone-line bg-white/70 p-4 transition-colors hover:border-accent/50">
@@ -70,12 +68,12 @@ export function RelatedContent({
         <span className="font-medium text-ink">{relation.label}</span> — {relation.teaser}
       </p>
       <div className="mt-3 flex items-center gap-3 text-sm">
-        {onOpenSideTrack && sideTrackParam ? (
+        {onOpenSideTrack && target.slug ? (
           <SideTrackLink
-            targetSlug={target.slug!}
-            className="rounded-full border border-stone-line px-3 py-1 font-medium hover:border-accent hover:text-accent"
+            targetSlug={target.slug}
+            className="rounded-full border border-stone-line px-3 py-1 text-xs font-medium hover:border-accent hover:text-accent"
           >
-            옆길 카드로 보기
+            옆길
           </SideTrackLink>
         ) : null}
         <TrackedRelationLink
@@ -85,9 +83,9 @@ export function RelatedContent({
           relationType={relation.relationType}
           relationNature={relation.relationNature}
           evidenceLevel={relation.evidenceLevel}
-          className="font-medium text-accent underline-offset-4 hover:underline"
+          className="text-xs font-medium text-accent underline-offset-4 hover:underline"
         >
-          깊이 읽기 →
+          자세히 보기 →
         </TrackedRelationLink>
       </div>
     </article>

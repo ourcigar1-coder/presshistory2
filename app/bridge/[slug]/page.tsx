@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { ExploreShell } from "@/components/layout/ExploreShell";
-import { RelatedPanel } from "@/components/layout/RightPanel";
 import { SideTrackOverlay } from "@/components/sidetrack/SideTrackOverlay";
 import { BridgeTracker, NodeViewTracker } from "@/components/analytics/NodeViewTracker";
 import { BridgePageView } from "@/components/nodes/BridgePageView";
@@ -31,7 +30,7 @@ export default async function BridgePageRoute({ params }: PageProps<"/bridge/[sl
 
   return (
     <>
-      <ExploreShell currentSlug={slug} right={<RelatedPanel relations={data.relatedNodes ?? []} />}>
+      <ExploreShell currentSlug={slug}>
         <BridgePageView data={data} />
       </ExploreShell>
       <Suspense fallback={null}>

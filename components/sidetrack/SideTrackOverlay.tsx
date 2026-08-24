@@ -128,7 +128,7 @@ export function SideTrackOverlay({
   return (
     <div className="fixed inset-0 z-40" role="presentation">
       {/* backdrop */}
-      <button aria-label="Side-track 닫기" className="absolute inset-0 bg-black/30" onClick={close} />
+      <button aria-label="옆길 닫기" className="absolute inset-0 bg-black/30" onClick={close} />
       <div
         ref={dialogRef}
         role="dialog"
@@ -137,7 +137,7 @@ export function SideTrackOverlay({
         className="absolute inset-x-0 bottom-0 max-h-[70vh] overflow-y-auto rounded-t-2xl bg-paper p-6 shadow-xl outline-none md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:h-full md:max-h-none md:w-[360px] md:rounded-none md:rounded-l-2xl lg:w-[380px]"
       >
         <div className="flex items-start justify-between gap-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent">Side-track</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent">옆길</p>
           <button
             onClick={close}
             data-autofocus
@@ -174,7 +174,7 @@ export function SideTrackOverlay({
                   href={nodeHref(active.target)}
                   className="rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-paper hover:bg-ink/90"
                 >
-                  전체 읽기
+                  자세히 보기
                 </Link>
                 <button
                   onClick={close}
