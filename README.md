@@ -3,6 +3,9 @@
 > 좋은 작품과 기술 하나가 과학·재료·언어·역사·사회·산업으로 계속 이어져 가족이
 > "이것도 궁금한데?"라고 말하게 만드는 탐험 사이트.
 
+**Production:** https://presshistory2-beta.vercel.app
+**Studio:** https://presshistory2-beta.vercel.app/studio
+
 Vertical Slice 구현 명세: `inbox/복제의_문명_Vertical_Slice_구현_확정_명세서_v1.1.md`
 
 ## 스택
