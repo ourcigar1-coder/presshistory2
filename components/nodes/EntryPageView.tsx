@@ -19,8 +19,8 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
             ? data.heroImage
             : data._id === "entry-poster"
               ? {
-                  url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jules_Ch%C3%A9ret_-_Saxol%C3%A9ine_-_Google_Art_Project.jpg",
-                  alt: "쥘 셰레의 석판화 포스터 ‘Saxoléine’(1893) — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례.",
+                  url: "https://upload.wikimedia.org/wikipedia/commons/4/40/%22L%27Esclave_blanche%22_par_Gustave_Aimard%2C_au_%22Journal_du_Dimanche%22..._-_affiche_-_Jules_Ch%C3%A9ret_-_btv1b9015469h.jpg",
+                  alt: "쥘 셰레의 석판화 포스터 ‘L'Esclave blanche’(Bnf Gallica 소장) — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례.",
                 }
               : null;
           return hero?.url ? (
@@ -29,8 +29,8 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
                 <Image src={hero.url} alt={hero.alt} width={1200} height={800} className="h-auto w-full" unoptimized={hero.url.endsWith(".svg")} fetchPriority="high" />
               </div>
               <figcaption className="mt-2 text-xs text-ink-soft">
-                Jules Chéret, Saxoléine, 1893 — The Art Institute of Chicago (CC0) ·{" "}
-                <a href="https://www.artic.edu/artworks/218855/saxoleine" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                Jules Chéret, L&apos;Esclave blanche — Bibliothèque nationale de France, Gallica. Public Domain ·{" "}
+                <a href="https://gallica.bnf.fr/ark:/12148/btv1b9015469h" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
                   소장처 바로가기
                 </a>
               </figcaption>

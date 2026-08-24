@@ -13,8 +13,8 @@ export const posterEntry: EntryPageData = {
     "밤거리가 밝아지고 사람이 흐르기 시작한 도시. 흐르는 눈을 붙잡아야 하는 상업이 벽을 원했다.",
   domain: "society",
   heroImage: {
-    url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jules_Ch%C3%A9ret_-_Saxol%C3%A9ine_-_Google_Art_Project.jpg",
-    alt: "쥘 셰레의 석판화 포스터 ‘Saxoléine’(1893). 벽에 붙은 대형 포스터가 거리를 장식하던 시절을 보여주는 대표 사례.",
+    url: "https://upload.wikimedia.org/wikipedia/commons/4/40/%22L%27Esclave_blanche%22_par_Gustave_Aimard%2C_au_%22Journal_du_Dimanche%22..._-_affiche_-_Jules_Ch%C3%A9ret_-_btv1b9015469h.jpg",
+    alt: "쥘 셰레의 석판화 포스터 ‘L'Esclave blanche’ — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례. (BnF Gallica, btv1b9015469h)",
   },
   connections: [
     {
