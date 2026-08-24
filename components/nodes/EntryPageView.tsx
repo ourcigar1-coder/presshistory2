@@ -14,15 +14,33 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
         <div className="mt-3">
           <IntroQuestion question={data.introQuestion} />
         </div>
-        {data.heroImage?.url ? (
-          <div className="mt-6 overflow-hidden rounded-2xl border border-stone-line">
-            <Image src={data.heroImage.url} alt={data.heroImage.alt} width={1200} height={800} className="h-auto w-full" unoptimized={data.heroImage.url.endsWith(".svg")} fetchPriority="high" />
-          </div>
-        ) : (
-          <div className="mt-6 flex h-56 items-center justify-center rounded-2xl border border-dashed border-stone-line bg-stone-line/30 px-8 text-center">
-            <p className="text-sm text-ink-soft">대표 이미지는 기관 자산 검증 후 연결됩니다 (§6.3)</p>
-          </div>
-        )}
+        {(() => {
+          const hero = data.heroImage?.url
+            ? data.heroImage
+            : data._id === "entry-poster"
+              ? {
+                  url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jules_Ch%C3%A9ret_-_Saxol%C3%A9ine_-_Google_Art_Project.jpg",
+                  alt: "쥘 셰레의 석판화 포스터 ‘Saxoléine’(1893) — 거리 벽을 장식하던 대형 색채 포스터의 대표 사례.",
+                }
+              : null;
+          return hero?.url ? (
+            <figure className="mt-6">
+              <div className="overflow-hidden rounded-2xl border border-stone-line">
+                <Image src={hero.url} alt={hero.alt} width={1200} height={800} className="h-auto w-full" unoptimized={hero.url.endsWith(".svg")} fetchPriority="high" />
+              </div>
+              <figcaption className="mt-2 text-xs text-ink-soft">
+                Jules Chéret, Saxoléine, 1893 — The Art Institute of Chicago (CC0) ·{" "}
+                <a href="https://www.artic.edu/artworks/218855/saxoleine" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                  소장처 바로가기
+                </a>
+              </figcaption>
+            </figure>
+          ) : (
+            <div className="mt-6 flex h-56 items-center justify-center rounded-2xl border border-dashed border-stone-line bg-stone-line/30 px-8 text-center">
+              <p className="text-sm text-ink-soft">대표 이미지는 기관 자산 검증 후 연결됩니다 (§6.3)</p>
+            </div>
+          );
+        })()}
       </header>
       <section className="mt-10 space-y-4 text-lg leading-relaxed">
         <RichText value={[{ _type: "block", _key: "simple", style: "normal", markDefs: [], children: [{ _type: "span", _key: "simple1", text: data.simpleExplanation }] }]} />
