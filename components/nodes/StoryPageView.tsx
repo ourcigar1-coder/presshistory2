@@ -44,8 +44,14 @@ export function TermPageView({ data }: { data: TermPageData }) {
       <p className="mt-6 border-l-4 border-accent bg-accent/5 p-4 text-lg leading-relaxed">{data.simpleDefinition}</p>
       {data._id === "term-registration" ? (
         <figure className="mt-8">
-          <Image src="/images/may-milton.jpg" alt="앙리 드 툴루즈로트렉, May Milton(1895) — 무대 의상을 입은 메이 밀턴의 옆모습" width={1200} height={700} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
-          <figcaption className="mt-2 text-xs text-ink-soft">May Milton (1895) — 다섯 개의 색판을 겹쳐 찍은 석판화. 색이 많아질수록 정합은 더 어려워진다. The Metropolitan Museum of Art, 32.88.3 (Public Domain)</figcaption>
+          <Image src="/images/may-milton.jpg" alt="앙리 드 툴루즈로트렉, May Milton(1895) — 다섯 개의 색판을 겹쳐 찍은 컬러 석판화 포스터" width={1200} height={700} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
+          <figcaption className="mt-2 text-xs text-ink-soft">May Milton (1895) — 다섯 개의 색판을 겹쳐 찍은 컬러 석판화. 색이 많아질수록 정합은 더 어려워진다. The Metropolitan Museum of Art, 32.88.3 (Public Domain)</figcaption>
+        </figure>
+      ) : null}
+      {data._id === "term-registration" ? (
+        <figure className="mt-6">
+          <Image src="/images/registration-marks.jpg" alt="인쇄판 모서리의 레지스터 마크 — 십자와 원형 표식이 겹쳐 색판이 정확히 맞았는지 확인한다" width={1200} height={800} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
+          <figcaption className="mt-2 text-xs text-ink-soft">인쇄 판의 레지스터 마크 — 십자 표식이 겹치면 색판이 정확히 맞은 것이다. Wikimedia Commons (Public Domain)</figcaption>
         </figure>
       ) : null}
       {data.etymology ? <section aria-labelledby="etymology-heading" className="mt-10"><h2 id="etymology-heading" className="text-xl font-bold">{data.etymology.heading}</h2><div className="mt-3"><RichText value={data.etymology.body} /></div></section> : null}

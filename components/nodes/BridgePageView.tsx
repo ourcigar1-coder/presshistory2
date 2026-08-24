@@ -26,8 +26,8 @@ export function BridgePageView({ data }: { data: BridgePageData }) {
               <figcaption className="px-3 py-2 text-xs text-ink-soft">실리콘 웨이퍼 위의 패턴 — Wikimedia Commons, CC BY 4.0</figcaption>
             </figure>
             <figure className="overflow-hidden rounded-2xl border border-stone-line">
-              <Image src="/images/pcb.jpg" alt="인쇄회로기판의 배선과 부품 자리를 보여주는 클로즈업" width={1200} height={800} className="h-auto w-full object-cover" />
-              <figcaption className="px-3 py-2 text-xs text-ink-soft">인쇄회로기판 — Wikimedia Commons, CC BY-SA 2.0</figcaption>
+              <Image src="/images/pcb-solder-side.jpg" alt="인쇄회로기판 뒷면(납땜면) — 회로 패턴이 회색 동선으로 얽혀 있다" width={1200} height={543} className="h-auto w-full object-cover" />
+              <figcaption className="px-3 py-2 text-xs text-ink-soft">PCB 뒷면의 회로 패턴 — Wikimedia Commons, CC BY-SA 4.0</figcaption>
             </figure>
           </div>
         </>
