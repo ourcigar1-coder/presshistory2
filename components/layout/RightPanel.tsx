@@ -9,7 +9,7 @@ export function SideTrackChips({
 }) {
   if (!relations || relations.length === 0) return null;
   return (
-    <section aria-label="짤막지식" className="mt-10 border-t border-stone-line pt-5 xl:hidden">
+    <section aria-label="짤막지식" className="mt-10 border-t border-stone-line pt-5">
       <p className="text-xs font-medium tracking-wide text-ink-soft">짤막지식</p>
       <ul className="mt-3 flex flex-wrap gap-2">
         {relations.map((r) => (
