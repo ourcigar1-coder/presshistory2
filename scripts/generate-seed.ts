@@ -82,6 +82,22 @@ const materialDocs: Doc[] = [
     relatedScienceConcepts: [ref("science-hydrophilic-oleophilic-surface")],
     sources: [ref(SOURCE_IDS.britannicaGumArabic), ref(SOURCE_IDS.wikipediaGumArabic)],
   },
+  {
+    _id: "material-litho-stone",
+    _type: "material",
+    name: "석회암 판",
+    simpleDescription: "색 하나당 한 개씩 준비한 매끈한 돌판. 색이 네 개면 판도 네 개다.",
+    properties: ["다공성", "친수성 표면"],
+    sources: [ref(SOURCE_IDS.britannicaLithography)],
+  },
+  {
+    _id: "material-litho-ink",
+    _type: "material",
+    name: "기름성 잉크와 크레용",
+    simpleDescription: "물을 미워하는 성질을 이용해, 그린 자리에만 머문다.",
+    properties: ["소수성", "친유성"],
+    sources: [ref(SOURCE_IDS.britannicaLithography)],
+  },
 ];
 
 const placeDocs: Doc[] = [
@@ -354,7 +370,7 @@ const artworkDoc: Doc = {
   shortDescription: moulinRougeArtwork.shortDescription,
   domain: moulinRougeArtwork.domain,
   status: "published",
-  materials: moulinRougeArtwork.materials,
+  materials: [ref("material-litho-stone"), ref("material-litho-ink")],
   scienceConcepts: [ref("science-hydrophilic-oleophilic-surface")],
   heroImage: {
     _type: "image",

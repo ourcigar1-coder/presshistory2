@@ -65,10 +65,12 @@ export function ArtworkPageView({ data }: { data: ArtworkPageData }) {
 
       {data.materials && data.materials.length > 0 ? (
         <section aria-label="재료" className="mt-10 grid gap-3 sm:grid-cols-2">
-          {data.materials.map((m) => (
-            <div key={m.name} className="rounded-xl border border-stone-line bg-white/70 p-4 text-sm">
-              <span className="font-semibold">{m.name}</span>
-              {m.simpleDescription ? <p className="mt-1 text-ink-soft">{m.simpleDescription}</p> : null}
+          {data.materials
+            .filter((m) => m?.name)
+            .map((m) => (
+              <div key={m.name} className="rounded-xl border border-stone-line bg-white/70 p-4 text-sm">
+                <span className="font-semibold">{m.name}</span>
+                {m.simpleDescription ? <p className="mt-1 text-ink-soft">{m.simpleDescription}</p> : null}
             </div>
           ))}
         </section>
