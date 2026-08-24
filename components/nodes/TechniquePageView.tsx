@@ -75,6 +75,28 @@ export function TechniquePageView({ data, preview }: { data: TechniquePageData; 
         </section>
       ) : null}
 
+      {data.howToIdentify ? (
+        <section aria-labelledby="identify-heading" className="mt-12 rounded-xl border border-stone-line bg-white/70 p-6">
+          <h2 id="identify-heading" className="text-lg font-bold">
+            {data.howToIdentify.heading}
+          </h2>
+          <div className="mt-3 text-sm leading-relaxed">
+            <RichText value={data.howToIdentify.body} />
+          </div>
+        </section>
+      ) : null}
+
+      {data.efficacy ? (
+        <section aria-labelledby="efficacy-heading" className="mt-12">
+          <h2 id="efficacy-heading" className="text-xl font-bold">
+            {data.efficacy.heading}
+          </h2>
+          <div className="mt-3">
+            <RichText value={data.efficacy.body} />
+          </div>
+        </section>
+      ) : null}
+
       {/* Side-tracks (inline triggers + overlay 데이터) */}
       {data.sideTracks && data.sideTracks.length > 0 ? (
         <section aria-label="옆길로 새기기" className="mt-12 grid gap-4 sm:grid-cols-2">

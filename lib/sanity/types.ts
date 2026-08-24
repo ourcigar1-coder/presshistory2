@@ -67,6 +67,8 @@ export interface TechniquePageData {
   process?: ProcessStepProjection[];
   whyItAppeared?: RichSection;
   historicalContext?: RichSection;
+  howToIdentify?: RichSection;
+  efficacy?: RichSection;
   scienceConcepts?: ScienceConceptCard[];
   representativeArtwork?: NodeCard | null;
   sideTracks?: RelationTargetProjection[];

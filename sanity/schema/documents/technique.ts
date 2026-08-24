@@ -77,6 +77,21 @@ export const technique = defineType({
       group: "editorial",
     }),
     defineField({
+      name: "howToIdentify",
+      title: "How to Identify",
+      description:
+        "Audubon식 감별법: 평판=단면/판흔 없음, 현미경 입자감 vs offset 규칙 점 패턴 없음 등",
+      type: "richTextSection",
+      group: "editorial",
+    }),
+    defineField({
+      name: "efficacy",
+      title: "Efficacy & Practicality",
+      description: "재사용성·경제성·민주성. Griffiths 인용 등 권위 출처 포함",
+      type: "richTextSection",
+      group: "editorial",
+    }),
+    defineField({
       name: "scienceConcepts",
       title: "Science Concepts",
       type: "array",

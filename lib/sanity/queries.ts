@@ -127,6 +127,8 @@ export const TECHNIQUE_PAGE_QUERY = /* groq */ `
   "process": process[]{ title, description, image ${STATIC_DIAGRAM_PROJECTION} },
   whyItAppeared ${RICH_SECTION_PROJECTION},
   historicalContext ${RICH_SECTION_PROJECTION},
+  howToIdentify ${RICH_SECTION_PROJECTION},
+  efficacy ${RICH_SECTION_PROJECTION},
   "scienceConcepts": scienceConcepts[]->{
     _id, _type, title, "slug": slug.current, shortDescription, domain,
     oneSentence,
