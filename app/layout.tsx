@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
+import { Noto_Serif_KR } from "next/font/google";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { getSanityLive } from "@/lib/sanity/client";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import "./globals.css";
+
+const serif = Noto_Serif_KR({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,8 +30,8 @@ export default async function RootLayout({
   // §7.6 Definition of Done: Draft Mode + Visual Editing + SanityLive
   const { isEnabled } = await draftMode();
   return (
-    <html lang="ko" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">
+    <html lang="ko" className={`${serif.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-serif">
         <AnalyticsProvider>{children}</AnalyticsProvider>
         {SanityLive ? <SanityLive /> : null}
         {isEnabled ? <VisualEditing /> : null}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { ExploreShell } from "@/components/layout/ExploreShell";
+import { RightPanelChips } from "@/components/layout/RightPanel";
 import { SideTrackOverlay } from "@/components/sidetrack/SideTrackOverlay";
 import { NodeViewTracker } from "@/components/analytics/NodeViewTracker";
 import { StoryPageView } from "@/components/nodes/StoryPageView";
@@ -29,7 +30,7 @@ export default async function StoryPageRoute({ params }: PageProps<"/stories/[sl
   if (!data) notFound();
 
   return (
-    <ExploreShell currentSlug={slug}>
+    <ExploreShell currentSlug={slug} right={<RightPanelChips relations={data.connections ?? []} />}>
       <StoryPageView data={data} />
       <NodeViewTracker nodeId={data._id} nodeType={data._type} domain={data.domain} slug={slug} />
       <Suspense fallback={null}>

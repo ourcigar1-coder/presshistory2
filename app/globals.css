@@ -24,9 +24,7 @@
   --color-water: var(--water);
   --color-historical: var(--historical);
   --color-conceptual: var(--conceptual);
-  --font-sans:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
-    "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-serif: var(--font-serif);
 }
 
 html {
@@ -36,7 +34,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif), "Noto Serif KR", ui-serif, Georgia, serif;
 }
 
 /* reduced-motion 환경에서도 핵심 정보가 동일하게 이해 가능해야 한다 (§4.6) */

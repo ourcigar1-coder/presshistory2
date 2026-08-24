@@ -46,7 +46,7 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
         <RichText value={[{ _type: "block", _key: "simple", style: "normal", markDefs: [], children: [{ _type: "span", _key: "simple1", text: data.simpleExplanation }] }]} />
       </section>
       {data.optionalDiagram ? <StaticDiagram diagram={data.optionalDiagram} preview={preview} /> : null}
-      <SideTrackChips relations={data.connections ?? []} sourceNodeId={data._id} />
+      <SideTrackChips relations={data.connections ?? []} />
       <SourceList sources={data.sources} />
     </>
   );

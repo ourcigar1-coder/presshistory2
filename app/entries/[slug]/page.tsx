@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { ExploreShell } from "@/components/layout/ExploreShell";
+import { RightPanelChips } from "@/components/layout/RightPanel";
 import { SideTrackOverlay } from "@/components/sidetrack/SideTrackOverlay";
 import { NodeViewTracker } from "@/components/analytics/NodeViewTracker";
 import { EntryPageView } from "@/components/nodes/EntryPageView";
@@ -32,6 +33,7 @@ export default async function EntryPageRoute({ params }: PageProps<"/entries/[sl
     <>
       <ExploreShell
         currentSlug={slug}
+        right={<RightPanelChips relations={data.connections ?? []} />}
       >
         <EntryPageView data={data} preview={preview} />
       </ExploreShell>

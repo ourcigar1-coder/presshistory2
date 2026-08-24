@@ -29,7 +29,7 @@ export function ArtworkPageView({ data }: { data: ArtworkPageData }) {
       {data.materials && data.materials.length > 0 ? <section aria-label="재료" className="mt-10 grid gap-3 sm:grid-cols-2">{data.materials.filter((m) => m?.name).map((m) => <div key={m.name} className="rounded-xl border border-stone-line bg-white/70 p-4 text-sm"><span className="font-semibold">{m.name}</span>{m.simpleDescription ? <p className="mt-1 text-ink-soft">{m.simpleDescription}</p> : null}</div>)}</section> : null}
       {data.historicalContext ? <section aria-labelledby="art-history-heading" className="mt-12"><h2 id="art-history-heading" className="text-xl font-bold">{data.historicalContext.heading}</h2><div className="mt-3"><RichText value={data.historicalContext.body} /></div></section> : null}
       {data.whyItMatters ? <section aria-labelledby="matter-heading" className="mt-12"><h2 id="matter-heading" className="text-xl font-bold">{data.whyItMatters.heading}</h2><div className="mt-3"><RichText value={data.whyItMatters.body} /></div></section> : null}
-      <SideTrackChips relations={data.unexpectedConnections ?? []} sourceNodeId={data._id} />
+      <SideTrackChips relations={data.unexpectedConnections ?? []} />
       <SourceList sources={data.sources} />
     </>
   );

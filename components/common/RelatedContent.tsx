@@ -28,8 +28,8 @@ function RelationBadge({ nature }: { nature: "historical" | "conceptual" }) {
 }
 
 /**
- * 옆길 — 통일된 용어. 모든 연결은 '옆길'로만 표현한다.
- * 큰 카드는 쓰지 않고 칩 내부에서만 옆길 링크를 노출한다.
+ * 짤막지식 — 통일된 용어. 모든 연결은 '짤막지식'로만 표현한다.
+ * 큰 카드는 쓰지 않고 칩 내부에서만 짤막지식 링크를 노출한다.
  */
 export function RelatedContent({
   relation,
@@ -73,7 +73,7 @@ export function RelatedContent({
             targetSlug={target.slug}
             className="rounded-full border border-stone-line px-3 py-1 text-xs font-medium hover:border-accent hover:text-accent"
           >
-            옆길
+            짤막지식
           </SideTrackLink>
         ) : null}
         <TrackedRelationLink

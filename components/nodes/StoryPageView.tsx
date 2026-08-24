@@ -14,7 +14,7 @@ export function StoryPageView({ data }: { data: StoryPageData }) {
       <div className="mt-8 space-y-4 text-base leading-relaxed"><RichText value={data.storyBody} /></div>
       {data.evidence ? <section aria-labelledby="evidence-heading" className="mt-12 rounded-xl border border-stone-line bg-white/70 p-5"><h2 id="evidence-heading" className="text-lg font-bold">{data.evidence.heading}</h2><div className="mt-3 text-sm leading-relaxed"><RichText value={data.evidence.body} /></div></section> : null}
       {data.whatChanged ? <section aria-labelledby="changed-heading" className="mt-10"><h2 id="changed-heading" className="text-xl font-bold">{data.whatChanged.heading}</h2><div className="mt-3"><RichText value={data.whatChanged.body} /></div></section> : null}
-      <SideTrackChips relations={data.connections ?? []} sourceNodeId={data._id} />
+      <SideTrackChips relations={data.connections ?? []} />
       {data.furtherReading && data.furtherReading.length > 0 ? <SourceList sources={data.furtherReading} title="더 읽기" /> : null}
       <SourceList sources={data.sources} />
     </>

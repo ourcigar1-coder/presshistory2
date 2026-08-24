@@ -25,7 +25,7 @@ export function TechniquePageView({ data, preview }: { data: TechniquePageData; 
       {firstScience?.oneSentence ? <ScienceCallout analogy="기름은 기름끼리, 물은 물끼리 — 석판화 전체가 이 한 줄의 성질 위에 서 있다." term={firstScience.title ?? "친수성/친유성 표면"} definition={firstScience.oneSentence} /> : null}
       {data.whyItAppeared ? <section aria-labelledby="why-heading" className="mt-12"><h2 id="why-heading" className="text-xl font-bold">{data.whyItAppeared.heading}</h2><div className="mt-3"><RichText value={data.whyItAppeared.body} /></div></section> : null}
       {data.historicalContext ? <section aria-labelledby="history-heading" className="mt-12"><h2 id="history-heading" className="text-xl font-bold">{data.historicalContext.heading}</h2><div className="mt-3"><RichText value={data.historicalContext.body} /></div></section> : null}
-      <SideTrackChips relations={data.sideTracks ?? []} sourceNodeId={data._id} />
+      <SideTrackChips relations={data.sideTracks ?? []} />
       {data.howToIdentify ? <section aria-labelledby="identify-heading" className="mt-12 rounded-xl border border-stone-line bg-white/70 p-6"><h2 id="identify-heading" className="text-lg font-bold">{data.howToIdentify.heading}</h2><div className="mt-3 text-sm leading-relaxed"><RichText value={data.howToIdentify.body} /></div></section> : null}
       {data.efficacy ? <section aria-labelledby="efficacy-heading" className="mt-12"><h2 id="efficacy-heading" className="text-xl font-bold">{data.efficacy.heading}</h2><div className="mt-3"><RichText value={data.efficacy.body} /></div></section> : null}
       <SourceList sources={data.sources} />
