@@ -9,7 +9,7 @@ export const CARDS: Record<string, NodeCard> = {
     slug: "poster",
     shortDescription: "왜 19세기 도시는 갑자기 포스터로 가득 찼을까?",
     domain: "society",
-    thumbnail: null,
+    thumbnail: "/images/cheret-esclave.jpg",
   },
   lithography: {
     _id: "technique-lithography",
@@ -29,7 +29,7 @@ export const CARDS: Record<string, NodeCard> = {
     shortDescription:
       "멀리서도 알아보는 실루엣, 수천 장으로 퍼진 포스터. 거리가 화랑이 되던 순간.",
     domain: "art",
-    thumbnail: null,
+    thumbnail: "/images/moulin-rouge-la-goulue.jpg",
   },
   gumArabic: {
     _id: "story-why-gum-arabic-likes-water",
@@ -39,7 +39,7 @@ export const CARDS: Record<string, NodeCard> = {
     shortDescription:
       "아카시아 수액 하나가 인쇄의 판도를 바꾼 이야기. 마시멜로와 석판화의 숨은 연결점.",
     domain: "material",
-    thumbnail: null,
+    thumbnail: "/images/gum-arabic-exuding.jpg",
   },
   registration: {
     _id: "term-registration",
