@@ -152,6 +152,13 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
           </ol>
         </section>
 
+        <a
+          href="/compare"
+          className="block rounded-xl border border-accent/30 bg-accent/5 px-3 py-2 text-sm font-semibold text-accent hover:bg-accent/10"
+        >
+          네 가지 기법 비교 →
+        </a>
+
         <DepthCounter />
       </div>
     </nav>

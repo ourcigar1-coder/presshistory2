@@ -81,6 +81,18 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
+        <div className="mt-14">
+          <a
+            href="/compare"
+            className="block rounded-2xl border border-accent/40 bg-accent/5 p-6 transition-colors hover:border-accent"
+          >
+            <h2 className="text-xl font-bold text-accent">네 가지 판화, 같은 문제 →</h2>
+            <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+              잉크는 어디에, 판은 볼록인지 오목인지 — 석판화·목판화·동판화·스크린 인쇄를
+              나란히 놓고 비교한다.
+            </p>
+          </a>
+        </div>
       </div>
 
       <footer className="mx-auto w-full max-w-[1440px] px-6 pb-16 pt-4">
