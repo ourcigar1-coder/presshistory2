@@ -2,7 +2,7 @@ import { PanelHeading } from "@/components/layout/ExploreShell";
 import { CardTile } from "@/components/common/RelatedContent";
 import { fetchEntryListing } from "@/lib/sanity/fetchPage";
 import { EntryStartLink } from "@/components/analytics/EntryStartLink";
-import { WOODCUT_CARDS } from "@/lib/fixtures";
+import { WOODCUT_CARDS, INTAGLIO_CARDS } from "@/lib/fixtures";
 
 export const metadata = {
   title: "복제의 문명",
@@ -53,6 +53,18 @@ export default async function HomePage() {
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {WOODCUT_CARDS.map((card) => (
+              <CardTile key={card._id} card={card} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <PanelHeading>세 번째 탐험 경로 · 동판화</PanelHeading>
+          <p className="mt-2 text-sm text-ink-soft">
+            홈에 잉크가 고인다 — 명암의 마법사, 렘브란트와 고야의 기술.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {INTAGLIO_CARDS.map((card) => (
               <CardTile key={card._id} card={card} />
             ))}
           </div>

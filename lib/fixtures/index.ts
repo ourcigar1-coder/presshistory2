@@ -18,6 +18,10 @@ import { hydrophilicOleophilicScience } from "./hydrophilic";
 import { woodcutTechnique } from "./woodcut";
 import { hiroshigeWildGeeseArtwork } from "./hiroshige";
 import { greatWaveStory, kentoTerm } from "./ukiyoE";
+import { intaglioTechnique } from "./intaglio";
+import { rembrandtSelfPortraitArtwork } from "./rembrandt";
+import { etchingStory, plateMarkTerm } from "./etching";
+import { goyaSleepOfReasonArtwork } from "./goya";
 
 /**
  * §3.6 typed fixtures
@@ -46,6 +50,12 @@ const FIXTURES: Record<string, FixtureData> = {
   "artwork/hiroshige-wild-geese": hiroshigeWildGeeseArtwork,
   "story/how-many-blocks-great-wave": greatWaveStory,
   "term/kento": kentoTerm,
+  // 동판화 확장
+  "technique/intaglio": intaglioTechnique,
+  "artwork/rembrandt-self-portrait": rembrandtSelfPortraitArtwork,
+  "story/what-is-etching": etchingStory,
+  "term/plate-mark": plateMarkTerm,
+  "artwork/goya-sleep-of-reason": goyaSleepOfReasonArtwork,
 };
 
 export function getFixture(type: string, slug: string): FixtureData | null {
@@ -72,4 +82,12 @@ export const WOODCUT_CARDS: NodeCard[] = [
   { _id: hiroshigeWildGeeseArtwork._id, _type: "artwork", title: hiroshigeWildGeeseArtwork.title, slug: "hiroshige-wild-geese", shortDescription: hiroshigeWildGeeseArtwork.shortDescription, domain: hiroshigeWildGeeseArtwork.domain, thumbnail: "/images/hiroshige-wild-geese.jpg" },
   { _id: greatWaveStory._id, _type: "story", title: greatWaveStory.question, slug: "how-many-blocks-great-wave", shortDescription: undefined, domain: greatWaveStory.domain, thumbnail: "/images/hokusai-wave.jpg" },
   { _id: kentoTerm._id, _type: "term", title: kentoTerm.term, slug: "kento", shortDescription: kentoTerm.simpleDefinition, domain: kentoTerm.domain, thumbnail: "/images/hiroshige-wild-geese.jpg" },
+];
+
+/** 확장 경로 — 동판화 */
+export const INTAGLIO_CARDS: NodeCard[] = [
+  { _id: intaglioTechnique._id, _type: "technique", title: intaglioTechnique.title, slug: "intaglio", shortDescription: intaglioTechnique.shortDescription, domain: intaglioTechnique.domain, thumbnail: "/images/rembrandt-self-portrait.jpg" },
+  { _id: rembrandtSelfPortraitArtwork._id, _type: "artwork", title: rembrandtSelfPortraitArtwork.title, slug: "rembrandt-self-portrait", shortDescription: rembrandtSelfPortraitArtwork.shortDescription, domain: rembrandtSelfPortraitArtwork.domain, thumbnail: "/images/rembrandt-self-portrait.jpg" },
+  { _id: etchingStory._id, _type: "story", title: etchingStory.question, slug: "what-is-etching", shortDescription: undefined, domain: etchingStory.domain, thumbnail: "/images/intaglio-printing.jpg" },
+  { _id: plateMarkTerm._id, _type: "term", title: plateMarkTerm.term, slug: "plate-mark", shortDescription: plateMarkTerm.simpleDefinition, domain: plateMarkTerm.domain, thumbnail: "/images/rembrandt-samaritan.jpg" },
 ];

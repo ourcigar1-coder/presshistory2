@@ -124,4 +124,35 @@ export const SOURCES: Record<string, SourceProjection> = {
     accessedAt: ACCESSED,
     notes: "CC BY-SA 3.0. 현대 컬러 목판 작업 과정 사진.",
   },
+  // ---------- 동판화 (intaglio) ----------
+  /** Met · 렘브란트 『선한 사마리아인』 에칭 */
+  metRembrandtSamaritan: {
+    title: "Rembrandt, Christ Healing the Sick (The Hundred Guilder Print) / The Good Samaritan — Collection record",
+    sourceType: "institution",
+    institution: "The Metropolitan Museum of Art",
+    year: 1648,
+    url: "https://www.metmuseum.org/art/collection/search/371739",
+    accessedAt: ACCESSED,
+    notes: "17.37.192. 에칭·에닝그래빙·드라이포인트. Open Access(PD).",
+  },
+  /** Met · 렘브란트 자화상 에칭 */
+  metRembrandtSelfPortrait: {
+    title: "Rembrandt, Self-Portrait Leaning on a Stone Sill — Collection record",
+    sourceType: "institution",
+    institution: "The Metropolitan Museum of Art",
+    year: 1639,
+    url: "https://www.metmuseum.org/art/collection/search/371786",
+    accessedAt: ACCESSED,
+    notes: "41.1.31. 에칭. Open Access(PD), image via Wikimedia Commons (CC0).",
+  },
+  /** Met · 고야 『로스 카프리초스』 */
+  metGoyaCaprichos: {
+    title: "Francisco de Goya, Los Caprichos — Collection record",
+    sourceType: "institution",
+    institution: "The Metropolitan Museum of Art",
+    year: 1799,
+    url: "https://www.metmuseum.org/art/collection/search/339636",
+    accessedAt: ACCESSED,
+    notes: "에칭·아쿠아팅트. Open Access(PD). 『이성의 잠은 괴물을 낳는다』 포함.",
+  },
 };
