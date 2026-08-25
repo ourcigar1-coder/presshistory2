@@ -17,7 +17,9 @@ export function ArtworkPageView({ data }: { data: ArtworkPageData }) {
             ? data.heroImage
             : data._id === "artwork-moulin-rouge-la-goulue"
               ? { url: "/images/moulin-rouge-la-goulue.jpg", alt: "툴루즈 로트렉, 물랑루즈: 라 굴루(1891) — 하얀 스커트를 부풀린 라 굴루와 검은 실루엣의 발렌탱이 노란 불빛 속에 대비된다." }
-              : null;
+              : data._id === "artwork-hiroshige-wild-geese"
+                ? { url: "/images/hiroshige-wild-geese.jpg", alt: "우타가와 히로시게의 다색 목판화 『만월하의 비행기』. 짙은 남색 하늘에 큰 보름달이 떠 있고, 그 앞으로 기러기 떼가 날아간다." }
+                : null;
           return hero?.url ? (
             <figure className="mt-6">
               <div className="overflow-hidden rounded-2xl border border-stone-line bg-white">
