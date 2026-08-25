@@ -12,7 +12,7 @@ Vertical Slice 구현 명세: `inbox/복제의_문명_Vertical_Slice_구현_확�
 
 - Next.js 16 (App Router, Turbopack) + React 19 + TypeScript + Tailwind CSS v4
 - Sanity v6 (embedded studio `/studio`, Live Content API, Draft Mode, Visual Editing)
-- PostHog (`06 Analytics` core events)
+- PostHog (`06 Analytics` core events) — **선택사항**. 가족용 비공개 서비스에서는 생략 가능하며, 키가 없으면 분석이 안전하게 비활성화된다
 - pnpm / Vitest / GitHub Actions
 
 ## 시작하기
