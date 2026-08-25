@@ -60,6 +60,12 @@ export function TermPageView({ data }: { data: TermPageData }) {
           <figcaption className="mt-2 text-xs text-ink-soft">인쇄 판의 레지스터 마크 — 십자 표식이 겹치면 색판이 정확히 맞은 것이다. Wikimedia Commons (Public Domain)</figcaption>
         </figure>
       ) : null}
+      {data._id === "term-kento" ? (
+        <figure className="mt-8">
+          <Image src="/images/kento-woodblock.jpg" alt="일본 우키요에 목판 실물 — 판의 가장자리에 파인 겐토(눈금) 홈이 보인다. 종이를 이 홈에 걸어 매번 같은 자리에 놓는다" width={1200} height={900} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
+          <figcaption className="mt-2 text-xs text-ink-soft">우키요에 목판 실물 — 판 가장자리의 겐토 홈이 종이의 위치를 고정한다. Rijksmuseum (CC0)</figcaption>
+        </figure>
+      ) : null}
       {data.etymology ? <section aria-labelledby="etymology-heading" className="mt-10"><h2 id="etymology-heading" className="text-xl font-bold">{data.etymology.heading}</h2><div className="mt-3"><RichText value={data.etymology.body} /></div></section> : null}
       {data.contextDefinition ? <section aria-labelledby="context-heading" className="mt-10"><h2 id="context-heading" className="text-xl font-bold">{data.contextDefinition.heading}</h2><div className="mt-3"><RichText value={data.contextDefinition.body} /></div></section> : null}
       <SourceList sources={data.sources} />
