@@ -133,6 +133,7 @@ export function SideTrackOverlay({
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
+        aria-labelledby={active ? "sidetrack-dialog-title" : undefined}
         tabIndex={-1}
         className="absolute inset-x-0 bottom-0 max-h-[70vh] overflow-y-auto rounded-t-2xl bg-paper p-6 shadow-xl outline-none md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:h-full md:max-h-none md:w-[360px] md:rounded-none md:rounded-l-2xl lg:w-[380px]"
       >
@@ -161,7 +162,7 @@ export function SideTrackOverlay({
               {active.relationNature === "conceptual" ? "개념적 유사" : "역사적 연결"} ·{" "}
               {active.evidenceLevel}
             </span>
-            <h2 className="mt-2 text-lg font-bold leading-snug">{active.label}</h2>
+            <h2 id="sidetrack-dialog-title" className="mt-2 text-lg font-bold leading-snug">{active.label}</h2>
             <p className="mt-3 text-sm leading-relaxed">{active.teaser}</p>
 
             <div className="mt-5 rounded-xl border border-stone-line bg-white/80 p-4">

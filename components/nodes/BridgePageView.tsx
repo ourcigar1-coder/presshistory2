@@ -12,7 +12,7 @@ export function BridgePageView({ data }: { data: BridgePageData }) {
     <>
       <header>
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">Bridge</p>
-        <h2 className="mt-2 text-sm font-semibold text-ink-soft">{data.title}</h2>
+        <p className="mt-2 text-sm font-semibold text-ink-soft">{data.title}</p>
         <div className="mt-3"><IntroQuestion question={data.introQuestion} /></div>
         <p className="mt-4 rounded-xl bg-stone-line/50 p-3 text-sm leading-relaxed text-ink-soft">이 페이지는 <strong>역사적 사실</strong>과 <strong className="text-conceptual">개념적 유사성</strong>을 구분해서 보여줍니다. “판화가 발전해서 반도체가 되었다”는 단선적 서술은 사용하지 않습니다 (§1.3).</p>
       </header>

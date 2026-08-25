@@ -10,7 +10,7 @@ export function EntryPageView({ data, preview }: { data: EntryPageData; preview?
     <>
       <header>
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">Entry</p>
-        <h2 className="mt-2 text-sm font-semibold text-ink-soft">{data.title}</h2>
+        <p className="mt-2 text-sm font-semibold text-ink-soft">{data.title}</p>
         <div className="mt-3">
           <IntroQuestion question={data.introQuestion} />
         </div>

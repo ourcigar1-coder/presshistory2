@@ -44,7 +44,7 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
                     className={
                       "flex items-start gap-2 rounded-lg px-2 py-1.5 text-sm leading-snug " +
                       (isCurrent
-                        ? "bg-accent/10 font-semibold text-accent"
+                        ? "bg-accent/10 font-semibold text-historical"
                         : "text-ink/85 hover:bg-stone-line/50")
                     }
                   >
@@ -75,7 +75,7 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
                     className={
                       "flex items-start gap-2 rounded-lg px-2 py-1.5 text-sm leading-snug " +
                       (isCurrent
-                        ? "bg-accent/10 font-semibold text-accent"
+                        ? "bg-accent/10 font-semibold text-historical"
                         : "text-ink/85 hover:bg-stone-line/50")
                     }
                   >
@@ -106,7 +106,7 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
                     className={
                       "flex items-start gap-2 rounded-lg px-2 py-1.5 text-sm leading-snug " +
                       (isCurrent
-                        ? "bg-accent/10 font-semibold text-accent"
+                        ? "bg-accent/10 font-semibold text-historical"
                         : "text-ink/85 hover:bg-stone-line/50")
                     }
                   >
@@ -137,7 +137,7 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
                     className={
                       "flex items-start gap-2 rounded-lg px-2 py-1.5 text-sm leading-snug " +
                       (isCurrent
-                        ? "bg-accent/10 font-semibold text-accent"
+                        ? "bg-accent/10 font-semibold text-historical"
                         : "text-ink/85 hover:bg-stone-line/50")
                     }
                   >

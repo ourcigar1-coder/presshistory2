@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { CompactNav } from "@/components/layout/ExploreShell";
 import { SourceList } from "@/components/common/SourceList";
@@ -210,9 +211,9 @@ export default function ComparePage() {
           네 기법 모두 ‘여러 층을 어긋나지 않게 겹치는 문제’를 풀었다. 이 정합의
           문제가 오늘날 반도체 패터닝의 alignment로 이어진다 — 물론 계보가 아니라
           구조의 유사성으로.{" "}
-          <a href="/bridge/from-printing-to-patterning" className="font-medium underline underline-offset-2">
+          <Link href="/bridge/from-printing-to-patterning" className="font-medium underline underline-offset-2">
             브리지 노드에서 자세히 →
-          </a>
+          </Link>
         </p>
 
         <SourceList
