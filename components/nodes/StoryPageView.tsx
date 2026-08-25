@@ -12,6 +12,12 @@ export function StoryPageView({ data }: { data: StoryPageData }) {
         <h1 className="mt-2 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{data.question}</h1>
       </header>
       <p className="mt-6 border-l-4 border-water bg-water/5 p-4 text-lg leading-relaxed">{data.shortAnswer}</p>
+      {data._id === "story-how-many-blocks-great-wave" ? (
+        <figure className="mt-8">
+          <Image src="/images/hokusai-wave.jpg" alt="가나가와 해변의 큰 파도 — 갈라진 물방울과 후지산, 여러 색판의 겹침으로 완성된 목판화" width={1200} height={1700} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
+          <figcaption className="mt-2 text-xs text-ink-soft">가나가와 해변의 큰 파도 — Katsushika Hokusai, The Metropolitan Museum of Art, JP10 (Public Domain)</figcaption>
+        </figure>
+      ) : null}
       {data._id === "story-why-gum-arabic-likes-water" ? (
         <figure className="mt-8">
           <Image src="/images/gum-arabic-exuding.jpg" alt="아카시아 나무 줄기에서 스며 나와 굳은 아라비아고무 수액" width={1200} height={800} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
@@ -44,8 +50,8 @@ export function TermPageView({ data }: { data: TermPageData }) {
       <p className="mt-6 border-l-4 border-accent bg-accent/5 p-4 text-lg leading-relaxed">{data.simpleDefinition}</p>
       {data._id === "term-registration" ? (
         <figure className="mt-8">
-          <Image src="/images/may-milton.jpg" alt="앙리 드 툴루즈로트렉, May Milton(1895) — 다섯 개의 색판을 겹쳐 찍은 컬러 석판화 포스터" width={1200} height={700} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
-          <figcaption className="mt-2 text-xs text-ink-soft">May Milton (1895) — 다섯 개의 색판을 겹쳐 찍은 컬러 석판화. 색이 많아질수록 정합은 더 어려워진다. The Metropolitan Museum of Art, 32.88.3 (Public Domain)</figcaption>
+          <Image src="/images/moulin-rouge-color.jpg" alt="앙리 드 툴루즈로트렉, 물랑루즈: 라 굴루(1891) — 노란빛 스커트, 검은 실루엣, 빨간 글씨가 겹쳐진 컬러 다색 석판화 포스터" width={1200} height={1606} className="h-auto w-full rounded-2xl border border-stone-line object-cover" />
+          <figcaption className="mt-2 text-xs text-ink-soft">Moulin Rouge: La Goulue (1891) — 네 개의 색판을 겹쳐 찍은 컬러 석판화. 색이 많아질수록 정합은 더 어려워진다. Henri de Toulouse-Lautrec, The Metropolitan Museum of Art, 32.88.12 (Public Domain, via Wikimedia Commons)</figcaption>
         </figure>
       ) : null}
       {data._id === "term-registration" ? (

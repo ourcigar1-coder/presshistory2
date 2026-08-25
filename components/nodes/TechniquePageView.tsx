@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { TechniquePageData } from "@/lib/sanity/types";
 import { RichText, ScienceCallout, ProcessSteps } from "@/components/common/RichText";
 import { StaticDiagram } from "@/components/common/StaticDiagram";
@@ -7,12 +8,21 @@ import { InteractiveDiagram } from "@/components/interactive/InteractiveDiagram"
 
 export function TechniquePageView({ data, preview }: { data: TechniquePageData; preview?: boolean }) {
   const firstScience = data.scienceConcepts?.[0];
+  const isWoodcut = data._id === "technique-woodcut";
+
   return (
     <>
       <header>
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">Technique · {data.family}</p>
         <h1 className="mt-2 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{data.title}</h1>
         <p className="mt-5 border-l-4 border-accent bg-accent/5 p-4 text-lg leading-relaxed">{data.tenSecondExplanation}</p>
+        {/* 인트로 히어로 — 기법의 첫인상을 그리는 대표 이미지 */}
+        {isWoodcut ? (
+          <figure className="mt-6">
+            <Image src="/images/hokusai-wave.jpg" alt="가나가와 해변의 큰 파도 — 다색 목판 인쇄의 정점. 파도, 물방울, 배, 후지산이 여러 판의 겹침으로 완성된다." width={1200} height={1700} className="h-auto w-full rounded-2xl border border-stone-line object-cover" fetchPriority="high" />
+            <figcaption className="mt-2 text-xs text-ink-soft">가나가와 해변의 큰 파도 — Katsushika Hokusai, The Metropolitan Museum of Art (Public Domain)</figcaption>
+          </figure>
+        ) : null}
       </header>
       {data.process && data.process.length > 0 ? (
         <section aria-labelledby="process-heading" className="mt-12">

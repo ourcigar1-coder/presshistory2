@@ -2,6 +2,7 @@ import { PanelHeading } from "@/components/layout/ExploreShell";
 import { CardTile } from "@/components/common/RelatedContent";
 import { fetchEntryListing } from "@/lib/sanity/fetchPage";
 import { EntryStartLink } from "@/components/analytics/EntryStartLink";
+import { WOODCUT_CARDS } from "@/lib/fixtures";
 
 export const metadata = {
   title: "복제의 문명",
@@ -35,7 +36,7 @@ export default async function HomePage() {
       </header>
 
       <div className="mx-auto w-full max-w-[1440px] px-6 py-12">
-        <PanelHeading>첫 번째 탐험 경로</PanelHeading>
+        <PanelHeading>첫 번째 탐험 경로 · 석판화</PanelHeading>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {cards.map((card) => (
             <CardTile key={card._id} card={card} />
@@ -44,6 +45,18 @@ export default async function HomePage() {
         {cards.length === 0 ? (
           <p className="text-sm text-ink-soft">아직 발행된 노드가 없다.</p>
         ) : null}
+
+        <div className="mt-14">
+          <PanelHeading>두 번째 탐험 경로 · 목판화</PanelHeading>
+          <p className="mt-2 text-sm text-ink-soft">
+            돌에 그리는 대신 나무를 도려낸다 — 같은 복제, 정반대의 방법.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {WOODCUT_CARDS.map((card) => (
+              <CardTile key={card._id} card={card} />
+            ))}
+          </div>
+        </div>
       </div>
 
       <footer className="mx-auto w-full max-w-[1440px] px-6 pb-16 pt-4">
