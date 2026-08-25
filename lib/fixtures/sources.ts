@@ -84,4 +84,44 @@ export const SOURCES: Record<string, SourceProjection> = {
     accessedAt: ACCESSED,
     notes: "현대 패터닝 개요 탐색용. Bridge의 historical/conceptual 구분은 편집 리뷰 필수 (§6.6).",
   },
+  // ---------- 목판화 (woodcut) ----------
+  /** Met · 히로시게 『만월하의 비행기』 collection record */
+  metHiroshigeWildGeese: {
+    title: "Utagawa Hiroshige, Wild Geese Flying under the Full Moon — Collection record",
+    sourceType: "institution",
+    institution: "The Metropolitan Museum of Art",
+    year: 1832,
+    url: "https://www.metmuseum.org/art/collection/search/36742",
+    accessedAt: ACCESSED,
+    notes: "JP270. Rogers Fund. Open Access(PD) 이미지 제공. 다색 우키요에 목판화.",
+  },
+  /** Met · 호쿠사이 『가나가와 해변의 큰 파도』 collection record */
+  metHokusaiWave: {
+    title: "Katsushika Hokusai, Under the Wave off Kanagawa — Collection record",
+    sourceType: "institution",
+    institution: "The Metropolitan Museum of Art",
+    year: 1830,
+    url: "https://www.metmuseum.org/art/collection/search/45434",
+    accessedAt: ACCESSED,
+    notes: "JP10. Harris Brisbane Dick Fund. Open Access(PD). 다색 목판 인쇄의 정점.",
+  },
+  /** NGA · 뒤러 『코뿔소』 collection record */
+  ngaDurerRhinoceros: {
+    title: "Albrecht Dürer, The Rhinoceros — Collection record",
+    sourceType: "institution",
+    institution: "National Gallery of Art, Washington",
+    year: 1515,
+    url: "https://www.nga.gov/collection/art-object-page.121617.html",
+    accessedAt: ACCESSED,
+    notes: "Open Access(PD). 목판화. 유럽 목판 복제 이미지의 상징적 사례.",
+  },
+  /** Commons · 목판 잉킹 작업 사진 */
+  commonsWoodcutInking: {
+    title: "Endi Poskovic inking a color wood-relief block",
+    sourceType: "openCollection",
+    institution: "Wikimedia Commons",
+    url: "https://commons.wikimedia.org/wiki/File:Endi_Poskovic_inking_a_color_wood-relief_block.jpg",
+    accessedAt: ACCESSED,
+    notes: "CC BY-SA 3.0. 현대 컬러 목판 작업 과정 사진.",
+  },
 };

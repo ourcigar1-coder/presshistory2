@@ -12,6 +12,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 import { posterEntry } from "../lib/fixtures/poster";
+import { woodcutTechnique } from "../lib/fixtures/woodcut";
+import { hiroshigeWildGeeseArtwork } from "../lib/fixtures/hiroshige";
+import { greatWaveStory, kentoTerm } from "../lib/fixtures/ukiyoE";
 import { lithographyTechnique } from "../lib/fixtures/lithography";
 import { moulinRougeArtwork } from "../lib/fixtures/moulinRouge";
 import { gumArabicStory } from "../lib/fixtures/gumArabic";
@@ -39,6 +42,10 @@ const SOURCE_IDS: Record<string, string> = {
   britannicaGumArabic: "source-britannica-gum-arabic",
   wikipediaGumArabic: "source-wikipedia-gum-arabic",
   wikipediaPhotolithography: "source-wikipedia-photolithography",
+  metHiroshigeWildGeese: "source-met-hiroshige-wild-geese",
+  metHokusaiWave: "source-met-hokusai-wave",
+  ngaDurerRhinoceros: "source-nga-durer-rhinoceros",
+  commonsWoodcutInking: "source-commons-woodcut-inking",
 };
 
 const sourceDocs: Doc[] = Object.entries(SOURCE_IDS).map(([key, id]) => ({
@@ -475,6 +482,215 @@ const scienceDoc: Doc = {
   publishedAt: NOW,
 };
 
+// ---------------------------------------------------------------- woodcut (목판화 확장)
+const woodcutDoc: Doc = {
+  _id: "technique-woodcut",
+  _type: "technique",
+  title: woodcutTechnique.title,
+  slug: { _type: "slug", current: "woodcut" },
+  family: woodcutTechnique.family,
+  tenSecondExplanation: woodcutTechnique.tenSecondExplanation,
+  shortDescription: woodcutTechnique.shortDescription,
+  domain: woodcutTechnique.domain,
+  status: "published",
+  process: woodcutTechnique.process?.map((s) => ({
+    title: s.title,
+    description: s.description,
+  })),
+  whyItAppeared: woodcutTechnique.whyItAppeared,
+  historicalContext: woodcutTechnique.historicalContext,
+  howToIdentify: woodcutTechnique.howToIdentify,
+  efficacy: woodcutTechnique.efficacy,
+  sideTracks: [ref("rel-woodcut-lithography"), ref("rel-woodcut-registration")],
+  representativeArtwork: ref("artwork-hiroshige-wild-geese"),
+  sources: [
+    ref(SOURCE_IDS.metHiroshigeWildGeese),
+    ref(SOURCE_IDS.metHokusaiWave),
+    ref(SOURCE_IDS.ngaDurerRhinoceros),
+  ],
+  publishedAt: NOW,
+};
+
+const hiroshigeDoc: Doc = {
+  _id: "artwork-hiroshige-wild-geese",
+  _type: "artwork",
+  title: hiroshigeWildGeeseArtwork.title,
+  slug: { _type: "slug", current: "hiroshige-wild-geese" },
+  year: 1832,
+  artist: ref("person-utagawa-hiroshige"),
+  technique: ref("technique-woodcut"),
+  thirtySecondExplanation: hiroshigeWildGeeseArtwork.thirtySecondExplanation,
+  shortDescription: hiroshigeWildGeeseArtwork.shortDescription,
+  domain: hiroshigeWildGeeseArtwork.domain,
+  status: "published",
+  materials: hiroshigeWildGeeseArtwork.materials,
+  howItWasMade: hiroshigeWildGeeseArtwork.howItWasMade,
+  historicalContext: hiroshigeWildGeeseArtwork.historicalContext,
+  whyItMatters: hiroshigeWildGeeseArtwork.whyItMatters,
+  unexpectedConnections: [ref("rel-hiroshige-kento"), ref("rel-hiroshige-lithography")],
+  heroImage: {
+    _type: "image",
+    alt: hiroshigeWildGeeseArtwork.heroImage!.alt,
+    visualRecord: ref("image-met-hiroshige-wild-geese"),
+  },
+  sources: [ref(SOURCE_IDS.metHiroshigeWildGeese), ref(SOURCE_IDS.metHokusaiWave)],
+  publishedAt: NOW,
+};
+
+const greatWaveDoc: Doc = {
+  _id: "story-how-many-blocks-great-wave",
+  _type: "story",
+  question: greatWaveStory.question,
+  slug: { _type: "slug", current: "how-many-blocks-great-wave" },
+  shortAnswer: greatWaveStory.shortAnswer,
+  storyBody: greatWaveStory.storyBody,
+  shortDescription: greatWaveStory.shortDescription,
+  domain: greatWaveStory.domain,
+  status: "published",
+  connections: [ref("rel-greatwave-registration"), ref("rel-greatwave-woodcut")],
+  evidence: greatWaveStory.evidence,
+  whatChanged: greatWaveStory.whatChanged,
+  furtherReading: [ref(SOURCE_IDS.metHokusaiWave)],
+  sources: [ref(SOURCE_IDS.metHokusaiWave), ref(SOURCE_IDS.metHiroshigeWildGeese)],
+  publishedAt: NOW,
+};
+
+const kentoDoc: Doc = {
+  _id: "term-kento",
+  _type: "term",
+  term: kentoTerm.term,
+  slug: { _type: "slug", current: "kento" },
+  originalLanguage: kentoTerm.originalLanguage,
+  pronunciation: kentoTerm.pronunciation,
+  literalMeaning: kentoTerm.literalMeaning,
+  simpleDefinition: kentoTerm.simpleDefinition,
+  contextDefinition: kentoTerm.contextDefinition,
+  etymology: kentoTerm.etymology,
+  shortDescription: kentoTerm.shortDescription,
+  domain: kentoTerm.domain,
+  status: "published",
+  sources: [ref(SOURCE_IDS.metHiroshigeWildGeese), ref(SOURCE_IDS.metHokusaiWave)],
+  publishedAt: NOW,
+};
+
+// ---------------------------------------------------------------- woodcut relations & entities
+const woodcutRelationDocs: Doc[] = [
+  {
+    _id: "rel-woodcut-lithography",
+    _type: "relation",
+    source: ref("technique-woodcut"),
+    target: ref("technique-lithography"),
+    relationType: "relatedTo",
+    relationNature: "conceptual",
+    evidenceLevel: "documented",
+    label: "돌 위에 그리는 것과 나무를 도려내는 것",
+    teaser: "같은 ‘복제’라는 목표, 정반대의 방법 — 석판화와 무엇이 다를까?",
+    editorialPriority: 1,
+    sources: [ref(SOURCE_IDS.metLithographyEssay)],
+  },
+  {
+    _id: "rel-woodcut-registration",
+    _type: "relation",
+    source: ref("technique-woodcut"),
+    target: ref("term-registration"),
+    relationType: "explains",
+    relationNature: "historical",
+    evidenceLevel: "documented",
+    label: "파도 하나에 수십 개의 판 — 색판 정합의 극한",
+    teaser: "가나가와의 큰 파도는 몇 장의 판으로 이루어져 있을까?",
+    editorialPriority: 2,
+    sources: [ref(SOURCE_IDS.metLaGoulue)],
+  },
+  {
+    _id: "rel-hiroshige-kento",
+    _type: "relation",
+    source: ref("artwork-hiroshige-wild-geese"),
+    target: ref("term-kento"),
+    relationType: "relatedTo",
+    relationNature: "historical",
+    evidenceLevel: "documented",
+    label: "겐토 — 우키요에의 정합 눈금",
+    teaser: "색판이 밀리미터 단위로 어긋나지 않은 비밀은 나무에 낸 작은 홈에 있다.",
+    editorialPriority: 1,
+    sources: [ref(SOURCE_IDS.metHiroshigeWildGeese)],
+  },
+  {
+    _id: "rel-hiroshige-lithography",
+    _type: "relation",
+    source: ref("artwork-hiroshige-wild-geese"),
+    target: ref("technique-lithography"),
+    relationType: "relatedTo",
+    relationNature: "conceptual",
+    evidenceLevel: "documented",
+    label: "석판화 — 같은 시대, 다른 대륙의 복제 기술",
+    teaser: "파리의 포스터와 에도의 풍경화는 서로를 알아보고 영향을 주었다.",
+    editorialPriority: 2,
+    sources: [ref(SOURCE_IDS.metLithographyEssay)],
+  },
+  {
+    _id: "rel-greatwave-registration",
+    _type: "relation",
+    source: ref("story-how-many-blocks-great-wave"),
+    target: ref("term-registration"),
+    relationType: "relatedTo",
+    relationNature: "conceptual",
+    evidenceLevel: "documented",
+    label: "같은 문제를 푼 석판화의 답",
+    teaser: "색 하나당 판 하나 — 파리에서도 에도에서도 정합이 품질이었다.",
+    editorialPriority: 1,
+    sources: [ref(SOURCE_IDS.metLaGoulue)],
+  },
+  {
+    _id: "rel-greatwave-woodcut",
+    _type: "relation",
+    source: ref("story-how-many-blocks-great-wave"),
+    target: ref("technique-woodcut"),
+    relationType: "explains",
+    relationNature: "historical",
+    evidenceLevel: "documented",
+    label: "이 공정의 재료와 기술",
+    teaser: "나무를 파내고, 물에 갠 색을 겹치는 우키요에의 세계.",
+    editorialPriority: 2,
+    sources: [ref(SOURCE_IDS.metHokusaiWave)],
+  },
+];
+
+const woodcutEntityDocs: Doc[] = [
+  {
+    _id: "person-utagawa-hiroshige",
+    _type: "person",
+    name: "Utagawa Hiroshige",
+    alternateNames: ["歌川広重", "히로시게"],
+    birthYear: 1797,
+    deathYear: 1858,
+    roles: ["우키요에 화가", "풍경화가"],
+    shortDescription:
+      "에도 시대 말기의 우키요에 화가. 『동해도오십삼차』로 풍경화를 대중 장르로 만들었다.",
+    sources: [ref(SOURCE_IDS.metHiroshigeWildGeese)],
+  },
+  {
+    _id: "image-met-hiroshige-wild-geese",
+    _type: "imageAssetRecord",
+    originType: "institutional",
+    institution: "The Metropolitan Museum of Art",
+    sourcePage: "https://www.metmuseum.org/art/collection/search/36742",
+    license: "Open Access — Public Domain",
+    publicDomain: true,
+    creditLine:
+      "Utagawa Hiroshige, Wild Geese Flying under the Full Moon, 1832. Rogers Fund, 1922 (JP270). Image: The Metropolitan Museum of Art (Open Access)",
+    accessionNumber: "JP270",
+    dateVerified: ACCESSED,
+  },
+  {
+    _id: "material-woodblock-cherry",
+    _type: "material",
+    name: "벚나무 판",
+    simpleDescription: "색과 윤곽마다 하나씩. 판의 결이 곧은 선을 내는 도구이기도 하다.",
+    properties: ["경질", "미세한 결"],
+    sources: [ref(SOURCE_IDS.metHiroshigeWildGeese)],
+  },
+];
+
 const docs: Doc[] = [
   ...sourceDocs,
   ...personDocs,
@@ -482,6 +698,8 @@ const docs: Doc[] = [
   ...placeDocs,
   ...imageRecords,
   ...relationDocs,
+  ...woodcutRelationDocs,
+  ...woodcutEntityDocs,
   entryDoc,
   techniqueDoc,
   artworkDoc,
@@ -489,6 +707,10 @@ const docs: Doc[] = [
   termDoc,
   bridgeDoc,
   scienceDoc,
+  woodcutDoc,
+  hiroshigeDoc,
+  greatWaveDoc,
+  kentoDoc,
 ];
 
 const outDir = join(process.cwd(), "seed");
