@@ -1,71 +1,76 @@
-<!--
-  AI-generated explanatory visual (§2.7)
-  generationProvider: ox-alpha (opencode) / model: x-preview-f-free
-  promptVersion: v1
-  purpose: 석판화 표면의 친수/친유 선택적 부착 단면 설명
-  referenceSources: Met hd/lith essay, Britannica "Lithography" (lib/fixtures/sources.ts)
-  humanReviewed: false (편집자 검수 전) — accuracyStatus: draft
--->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="serif">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#57534e"/>
     </marker>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9c2b6"/>
+      <stop offset="100%" stop-color="#a8a094"/>
+    </linearGradient>
+    <linearGradient id="inkgrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e2b28"/>
+      <stop offset="100%" stop-color="#1c1a17"/>
+    </linearGradient>
   </defs>
 
-  <!-- 배경 -->
-  <rect width="720" height="400" fill="#faf7f2"/>
-
-  <text x="360" y="34" text-anchor="middle" font-size="19" fill="#1c1a17" font-weight="700">젖은 빈 면은 잉크를 밀어내고, 그린 자리만 받는다</text>
+  <rect width="760" height="420" fill="#faf7f2"/>
+  <text x="380" y="36" text-anchor="middle" font-size="20" fill="#1c1a17" font-weight="700">젖은 빈 면은 잉크를 밀어내고, 그린 자리만 받는다</text>
 
   <!-- 잉크 롤러 -->
   <g>
-    <circle cx="240" cy="120" r="46" fill="#3f3c39"/>
-    <circle cx="240" cy="120" r="46" fill="none" stroke="#1c1a17" stroke-width="3"/>
-    <path d="M210 100 A42 42 0 0 1 268 98" stroke="#6b6864" stroke-width="4" fill="none"/>
-    <rect x="236" y="30" width="8" height="44" rx="4" fill="#57534e"/>
-    <text x="240" y="196" text-anchor="middle" font-size="14" fill="#57534e">기름 잉크 롤러</text>
+    <rect x="196" y="52" width="8" height="40" rx="4" fill="#57534e" transform="rotate(-8 200 72)"/>
+    <circle cx="210" cy="118" r="42" fill="#3f3c39"/>
+    <circle cx="210" cy="118" r="42" fill="none" stroke="#1c1a17" stroke-width="3"/>
+    <path d="M182 100 A38 38 0 0 1 236 98" stroke="#6b6864" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <text x="210" y="192" text-anchor="middle" font-size="14" fill="#57534e">기름 잉크 롤러</text>
   </g>
 
   <!-- 돌 판 -->
-  <rect x="60" y="230" width="600" height="70" rx="8" fill="#b8b2a7" stroke="#8d867b" stroke-width="2"/>
-  <text x="360" y="330" text-anchor="middle" font-size="13" fill="#57534e">석회암 판</text>
+  <rect x="60" y="240" width="640" height="72" rx="10" fill="url(#stone)" stroke="#8d867b" stroke-width="2"/>
+  <!-- 돌결 질감 -->
+  <g stroke="#9a9285" stroke-width="1" opacity="0.6">
+    <path d="M80 258 q40 -4 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none"/>
+    <path d="M80 282 q40 -3 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none"/>
+  </g>
+  <text x="380" y="336" text-anchor="middle" font-size="13" fill="#57534e">석회암 판</text>
 
   <!-- 왼쪽: 그린 자리 (친유) -->
   <g>
-    <path d="M110 232 q18 -16 36 0 q18 -14 36 0 q18 -12 34 2 l0 -10 q-52 -22 -106 -2 z" fill="#2e2b28"/>
-    <rect x="110" y="222" width="106" height="10" fill="#2e2b28"/>
+    <path d="M100 244 q22 -18 44 0 q22 -16 44 0 q20 -12 38 2 l0 -12 q-60 -24 -126 -2 z" fill="url(#inkgrad)"/>
+    <rect x="100" y="232" width="126" height="12" fill="#2e2b28"/>
     <!-- 잉크가 붙음 -->
-    <path d="M118 214 q45 -26 90 0 l0 8 q-45 -20 -90 0 z" fill="#1c1a17"/>
-    <line x1="163" y1="168" x2="163" y2="206" stroke="#57534e" stroke-width="2" marker-end="url(#arr)"/>
-    <text x="163" y="152" text-anchor="middle" font-size="14" fill="#1c1a17" font-weight="700">그린 선 · 기름을 붙잡음</text>
+    <path d="M108 222 q56 -30 112 0 l0 10 q-56 -24 -112 0 z" fill="#1c1a17"/>
+    <line x1="163" y1="176" x2="163" y2="214" stroke="#57534e" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="163" y="158" text-anchor="middle" font-size="15" fill="#1c1a17" font-weight="700">그린 선 · 기름을 붙잡음</text>
+    <text x="163" y="178" text-anchor="middle" font-size="12" fill="#57534e">잉크가 머문다</text>
   </g>
 
   <!-- 오른쪽: 빈 자리 (친수) -->
   <g>
-    <rect x="420" y="216" width="180" height="14" rx="7" fill="#93c5fd" opacity="0.9"/>
-    <!-- 물방울 -->
-    <circle cx="450" cy="192" r="9" fill="#60a5fa"/>
-    <circle cx="492" cy="188" r="11" fill="#60a5fa"/>
-    <circle cx="540" cy="193" r="8" fill="#60a5fa"/>
-    <circle cx="576" cy="189" r="10" fill="#60a5fa"/>
-    <line x1="510" y1="152" x2="510" y2="208" stroke="#57534e" stroke-width="2" marker-end="url(#arr)"/>
-    <text x="510" y="136" text-anchor="middle" font-size="14" fill="#1d4ed8" font-weight="700">빈 면은 물막으로 덮임</text>
+    <rect x="430" y="226" width="200" height="16" rx="8" fill="#93c5fd" opacity="0.85"/>
+    <circle cx="462" cy="200" r="10" fill="#60a5fa"/>
+    <circle cx="508" cy="194" r="12" fill="#60a5fa"/>
+    <circle cx="558" cy="200" r="9" fill="#60a5fa"/>
+    <circle cx="600" cy="195" r="11" fill="#60a5fa"/>
+    <circle cx="530" cy="176" r="7" fill="#93c5fd" opacity="0.7"/>
+    <line x1="530" y1="152" x2="530" y2="218" stroke="#57534e" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="530" y="134" text-anchor="middle" font-size="15" fill="#1d4ed8" font-weight="700">빈 면은 물막으로 덮임</text>
+    <text x="530" y="154" text-anchor="middle" font-size="12" fill="#57534e">잉크가 밀려난다</text>
   </g>
 
-  <!-- 중간 화살표: 잉크 거부 -->
+  <!-- 잉크 거부 화살표 -->
   <g>
-    <line x1="300" y1="120" x2="380" y2="120" stroke="#57534e" stroke-width="2.5" marker-end="url(#arr)" transform="rotate(24 340 120)"/>
-    <text x="352" y="88" text-anchor="middle" font-size="13" fill="#57534e">젖은 면 위에서는 미끄러져 지나감</text>
+    <path d="M300 118 q60 20 110 44" stroke="#57534e" stroke-width="2.5" fill="none" marker-end="url(#arr)" stroke-dasharray="6 5"/>
+    <text x="356" y="96" text-anchor="middle" font-size="13" fill="#57534e">젖은 면 위에서는 미끄러져 지나감</text>
   </g>
 
   <!-- 범례 -->
   <g font-size="12" fill="#57534e">
-    <rect x="60" y="362" width="14" height="14" fill="#1c1a17"/>
-    <text x="80" y="373">기름(잉크)</text>
-    <rect x="160" y="362" width="14" height="14" fill="#60a5fa"/>
-    <text x="180" y="373">물</text>
-    <rect x="220" y="362" width="14" height="14" fill="#b8b2a7"/>
-    <text x="240" y="373">돌 표면</text>
+    <rect x="60" y="382" width="14" height="14" fill="#1c1a17"/>
+    <text x="80" y="393">기름(잉크)</text>
+    <rect x="170" y="382" width="14" height="14" fill="#60a5fa"/>
+    <text x="190" y="393">물</text>
+    <rect x="230" y="382" width="14" height="14" fill="#b8b2a7"/>
+    <text x="250" y="393">돌 표면</text>
   </g>
 </svg>

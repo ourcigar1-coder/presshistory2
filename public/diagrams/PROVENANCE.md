@@ -9,7 +9,7 @@
 |---|---|
 | generationProvider | ox-alpha (opencode) |
 | model | x-preview-f-free |
-| generatedAt | 2026-08-24 |
+| generatedAt | 2026-08-24 (v1 SVG) — 외부 이미지 생성 도구로 재생성 예정 (GENERATION_PROMPTS.md 참조) |
 | promptVersion | v1 |
 | accuracyStatus | `draft` (편집자 검수 전) |
 | humanReviewed | false |
