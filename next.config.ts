@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.artic.edu" },
     ],
   },
+  async redirects() {
+    return [
+      // /studio → 기본 툴(structure)로 안내 ("Tool not found" 방지)
+      { source: "/studio", destination: "/studio/structure", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
