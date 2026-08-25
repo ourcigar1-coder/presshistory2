@@ -155,4 +155,23 @@ export const SOURCES: Record<string, SourceProjection> = {
     accessedAt: ACCESSED,
     notes: "에칭·아쿠아팅트. Open Access(PD). 『이성의 잠은 괴물을 낳는다』 포함.",
   },
+  // ---------- 스크린 인쇄 (screenprint) ----------
+  /** Commons · 벨로니스 스크린 인쇄 포스터 (WPA, PD) */
+  commonsVelonisSilkscreen: {
+    title: "Anthony Velonis, silkscreen poster technique illustration",
+    sourceType: "openCollection",
+    institution: "Wikimedia Commons",
+    url: "https://commons.wikimedia.org/wiki/File:Anleitung-velonis.jpg",
+    accessedAt: ACCESSED,
+    notes: "Public domain. WPA 시대 스크린 인쇄 기법 삽화.",
+  },
+  /** Commons · 티셔츠 스크린 인쇄 공정 사진 */
+  commonsScreenprintProcess: {
+    title: "A graphic designer transferring an impression on to a shirt with heat press",
+    sourceType: "openCollection",
+    institution: "Wikimedia Commons",
+    url: "https://commons.wikimedia.org/wiki/File:A_graphic_designer_transferring_an_impression_on_to_a_shirt_with_heat_press.jpg",
+    accessedAt: ACCESSED,
+    notes: "CC BY-SA 4.0. 현대 스크린 인쇄 공정 사진.",
+  },
 };

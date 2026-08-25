@@ -22,6 +22,7 @@ import { intaglioTechnique } from "./intaglio";
 import { rembrandtSelfPortraitArtwork } from "./rembrandt";
 import { etchingStory, plateMarkTerm } from "./etching";
 import { goyaSleepOfReasonArtwork } from "./goya";
+import { screenprintTechnique } from "./screenprint";
 
 /**
  * §3.6 typed fixtures
@@ -56,6 +57,7 @@ const FIXTURES: Record<string, FixtureData> = {
   "story/what-is-etching": etchingStory,
   "term/plate-mark": plateMarkTerm,
   "artwork/goya-sleep-of-reason": goyaSleepOfReasonArtwork,
+  "technique/screenprint": screenprintTechnique,
 };
 
 export function getFixture(type: string, slug: string): FixtureData | null {
@@ -90,4 +92,9 @@ export const INTAGLIO_CARDS: NodeCard[] = [
   { _id: rembrandtSelfPortraitArtwork._id, _type: "artwork", title: rembrandtSelfPortraitArtwork.title, slug: "rembrandt-self-portrait", shortDescription: rembrandtSelfPortraitArtwork.shortDescription, domain: rembrandtSelfPortraitArtwork.domain, thumbnail: "/images/rembrandt-self-portrait.jpg" },
   { _id: etchingStory._id, _type: "story", title: etchingStory.question, slug: "what-is-etching", shortDescription: undefined, domain: etchingStory.domain, thumbnail: "/images/intaglio-printing.jpg" },
   { _id: plateMarkTerm._id, _type: "term", title: plateMarkTerm.term, slug: "plate-mark", shortDescription: plateMarkTerm.simpleDefinition, domain: plateMarkTerm.domain, thumbnail: "/images/rembrandt-samaritan.jpg" },
+];
+
+/** 확장 경로 — 스크린 인쇄 (현대로 이어지는 다리) */
+export const SCREENPRINT_CARDS: NodeCard[] = [
+  { _id: screenprintTechnique._id, _type: "technique", title: screenprintTechnique.title, slug: "screenprint", shortDescription: screenprintTechnique.shortDescription, domain: screenprintTechnique.domain, thumbnail: "/images/silkscreen-process.jpg" },
 ];

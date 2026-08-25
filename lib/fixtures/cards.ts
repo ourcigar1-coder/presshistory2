@@ -141,4 +141,13 @@ export const CARDS: Record<string, NodeCard> = {
     domain: "technique",
     thumbnail: "/images/rembrandt-samaritan.jpg",
   },
+  screenprint: {
+    _id: "technique-screenprint",
+    _type: "technique",
+    title: "망을 뚫어 찍는 판화, 스크린 인쇄",
+    slug: "screenprint",
+    shortDescription: "막고, 밀고, 통과시킨다. 팝아트와 티셔츠로 이어진 가장 젊은 판화.",
+    domain: "technique",
+    thumbnail: "/images/silkscreen-process.jpg",
+  },
 };

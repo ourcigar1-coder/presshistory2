@@ -2,7 +2,7 @@ import { PanelHeading } from "@/components/layout/ExploreShell";
 import { CardTile } from "@/components/common/RelatedContent";
 import { fetchEntryListing } from "@/lib/sanity/fetchPage";
 import { EntryStartLink } from "@/components/analytics/EntryStartLink";
-import { WOODCUT_CARDS, INTAGLIO_CARDS } from "@/lib/fixtures";
+import { WOODCUT_CARDS, INTAGLIO_CARDS, SCREENPRINT_CARDS } from "@/lib/fixtures";
 
 export const metadata = {
   title: "복제의 문명",
@@ -65,6 +65,18 @@ export default async function HomePage() {
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {INTAGLIO_CARDS.map((card) => (
+              <CardTile key={card._id} card={card} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <PanelHeading>네 번째 탐험 · 스크린 인쇄와 현대</PanelHeading>
+          <p className="mt-2 text-sm text-ink-soft">
+            막고 밀어 통과시킨다 — 팝아트와 티셔츠, 그리고 반도체까지.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {SCREENPRINT_CARDS.map((card) => (
               <CardTile key={card._id} card={card} />
             ))}
           </div>

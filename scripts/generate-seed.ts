@@ -19,6 +19,7 @@ import { intaglioTechnique } from "../lib/fixtures/intaglio";
 import { rembrandtSelfPortraitArtwork } from "../lib/fixtures/rembrandt";
 import { etchingStory, plateMarkTerm } from "../lib/fixtures/etching";
 import { goyaSleepOfReasonArtwork } from "../lib/fixtures/goya";
+import { screenprintTechnique } from "../lib/fixtures/screenprint";
 import { lithographyTechnique } from "../lib/fixtures/lithography";
 import { moulinRougeArtwork } from "../lib/fixtures/moulinRouge";
 import { gumArabicStory } from "../lib/fixtures/gumArabic";
@@ -972,6 +973,62 @@ const intaglioEntityDocs: Doc[] = [
   },
 ];
 
+// ---------------------------------------------------------------- screenprint (스크린 인쇄 확장)
+const screenprintDoc: Doc = {
+  _id: "technique-screenprint",
+  _type: "technique",
+  title: screenprintTechnique.title,
+  slug: { _type: "slug", current: "screenprint" },
+  family: screenprintTechnique.family,
+  tenSecondExplanation: screenprintTechnique.tenSecondExplanation,
+  shortDescription: screenprintTechnique.shortDescription,
+  domain: screenprintTechnique.domain,
+  status: "published",
+  process: screenprintTechnique.process?.map((s) => ({
+    title: s.title,
+    description: s.description,
+  })),
+  whyItAppeared: screenprintTechnique.whyItAppeared,
+  historicalContext: screenprintTechnique.historicalContext,
+  howToIdentify: screenprintTechnique.howToIdentify,
+  efficacy: screenprintTechnique.efficacy,
+  sideTracks: [ref("rel-screenprint-lithography"), ref("rel-screenprint-registration")],
+  sources: [
+    ref(SOURCE_IDS.commonsVelonisSilkscreen),
+    ref(SOURCE_IDS.commonsScreenprintProcess),
+  ],
+  publishedAt: NOW,
+};
+
+const screenprintRelationDocs: Doc[] = [
+  {
+    _id: "rel-screenprint-lithography",
+    _type: "relation",
+    source: ref("technique-screenprint"),
+    target: ref("technique-lithography"),
+    relationType: "relatedTo",
+    relationNature: "conceptual",
+    evidenceLevel: "documented",
+    label: "막아서 찍는다 — 세 기법 중 가장 젊은 원리",
+    teaser: "그리기도 파기도 아닌, 막기. 스텐실의 계보를 잇는 기술.",
+    editorialPriority: 1,
+    sources: [ref(SOURCE_IDS.metLithographyEssay)],
+  },
+  {
+    _id: "rel-screenprint-registration",
+    _type: "relation",
+    source: ref("technique-screenprint"),
+    target: ref("term-registration"),
+    relationType: "relatedTo",
+    relationNature: "conceptual",
+    evidenceLevel: "documented",
+    label: "워홀의 어긋난 색 — misregistration의 미학",
+    teaser: "정합이 완벽하지 않아서 오히려 좋다 — 복제의 흔적을 예술로.",
+    editorialPriority: 2,
+    sources: [ref(SOURCE_IDS.metGoyaCaprichos)],
+  },
+];
+
 const docs: Doc[] = [
   ...sourceDocs,
   ...personDocs,
@@ -983,6 +1040,7 @@ const docs: Doc[] = [
   ...woodcutEntityDocs,
   ...intaglioRelationDocs,
   ...intaglioEntityDocs,
+  ...screenprintRelationDocs,
   entryDoc,
   techniqueDoc,
   artworkDoc,
@@ -999,6 +1057,7 @@ const docs: Doc[] = [
   goyaDoc,
   etchingDoc,
   plateMarkDoc,
+  screenprintDoc,
 ];
 
 const outDir = join(process.cwd(), "seed");

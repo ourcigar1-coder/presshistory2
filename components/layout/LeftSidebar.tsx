@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SLICE_CARDS, WOODCUT_CARDS, INTAGLIO_CARDS } from "@/lib/fixtures";
+import { SLICE_CARDS, WOODCUT_CARDS, INTAGLIO_CARDS, SCREENPRINT_CARDS } from "@/lib/fixtures";
 import { nodeHref } from "@/components/common/RelatedContent";
 import { DepthCounter } from "./DepthCounter";
 
@@ -112,6 +112,37 @@ export function LeftSidebar({ currentSlug }: { currentSlug?: string }) {
                   >
                     <span className={"mt-0.5 text-[11px] font-bold " + (isCurrent ? "text-accent" : "text-ink-soft")}>
                       {SLICE_CARDS.length + WOODCUT_CARDS.length + i + 1}
+                    </span>
+                    {card.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+
+        <section>
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-ink-soft">
+            네 번째 탐험 · 스크린 인쇄
+          </h2>
+          <ol className="mt-3 space-y-1" start={SLICE_CARDS.length + WOODCUT_CARDS.length + INTAGLIO_CARDS.length + 1}>
+            {SCREENPRINT_CARDS.map((card, i) => {
+              const href = nodeHref(card);
+              const isCurrent = card.slug === currentSlug;
+              return (
+                <li key={card._id}>
+                  <Link
+                    href={href}
+                    aria-current={isCurrent ? "page" : undefined}
+                    className={
+                      "flex items-start gap-2 rounded-lg px-2 py-1.5 text-sm leading-snug " +
+                      (isCurrent
+                        ? "bg-accent/10 font-semibold text-accent"
+                        : "text-ink/85 hover:bg-stone-line/50")
+                    }
+                  >
+                    <span className={"mt-0.5 text-[11px] font-bold " + (isCurrent ? "text-accent" : "text-ink-soft")}>
+                      {SLICE_CARDS.length + WOODCUT_CARDS.length + INTAGLIO_CARDS.length + i + 1}
                     </span>
                     {card.title}
                   </Link>
